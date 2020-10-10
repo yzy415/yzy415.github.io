@@ -138,10 +138,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="http://yoursite-url/2020/06/25/Java_并发/">
+  <link rel="canonical" href="http://endp.xyz/2020/06/25/Java_并发/">
   <title>
     
-    Java Concurrency - either thin | or die
+    Java并发（1） - Relax!
     
   </title>
 <meta name="generator" content="Hexo 4.2.1"></head>
@@ -187,7 +187,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/">Your Title</a>
+      <a class="navbar-brand" href="/">语言的漩涡</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -315,11 +315,13 @@
           <div class="post-heading">
             <div class="tags">
               
+              <a class="tag" href="/tags/#java" title="java">java</a>
+              
             </div>
-            <h1>Java Concurrency</h1>
+            <h1>Java并发（1）</h1>
             <h2 class="subheading"></h2>
             <span class="meta">
-              Posted by Your Name on
+              Posted by Yan on
               2020-06-25
             </span>
 
@@ -534,9 +536,13 @@
         <!-- Pager -->
         <ul class="pager">
           
+          <li class="previous">
+            <a href="/2020/06/25/2020-06-25-FileSystem_Hierachyg_Standard/" data-toggle="tooltip" data-placement="top" title="文件系统常用目录">&larr; Previous Post</a>
+          </li>
+          
           
           <li class="next">
-            <a href="/2020/04/17/Hexo-Theme-LiveMyLife/" data-toggle="tooltip" data-placement="top" title="Hexo-Theme-LiveMyLife">Next Post &rarr;</a>
+            <a href="/2020/06/21/2020-06-21-操作系统device_and_module/" data-toggle="tooltip" data-placement="top" title="设备和模组">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -579,7 +585,7 @@
       </a>
     </li>
     <li class="social-share-li">
-      <a target="_blank" class="social-share-icon" href="mailto:?subject=Java Concurrency&body=Hi,I found this website and thought you might like it http://yoursite-url/2020/06/25/Java_并发/">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=Java并发（1）&body=Hi,I found this website and thought you might like it http://endp.xyz/2020/06/25/Java_并发/">
         <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
       </a>
     </li>
@@ -612,7 +618,7 @@
     repo: '',
     owner: '',
     admin: '',
-    id: 'Thu Jun 25 2020 10:11:00 GMT+0800', // Ensure uniqueness and length less than 50
+    id: 'Thu Jun 25 2020 02:34:17 GMT+0800', // Ensure uniqueness and length less than 50
     distractionFreeMode: false, // Facebook-like distraction free mode
     perPage: 10 ,
     pagerDirection: 'last',
@@ -661,6 +667,17 @@
       <!-- Catalog: Tabe of Content -->
       <!-- Table of Contents -->
 
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Java-Concurrency"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">Java Concurrency</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Thread-Objects"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">Thread Objects</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#1-定义与启动进程"><span class="toc-nav-number">1.1.1.</span> <span class="toc-nav-text">1. 定义与启动进程</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#2-暂停执行"><span class="toc-nav-number">1.1.2.</span> <span class="toc-nav-text">2. 暂停执行</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#3-Interrupt"><span class="toc-nav-number">1.1.3.</span> <span class="toc-nav-text">3. Interrupt</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#4-Joins"><span class="toc-nav-number">1.1.4.</span> <span class="toc-nav-text">4. Joins</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Synchronization"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">Synchronization</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#1-Thread-Interference"><span class="toc-nav-number">1.2.1.</span> <span class="toc-nav-text">1. Thread Interference</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#2-Memory-Consistency-Errors"><span class="toc-nav-number">1.2.2.</span> <span class="toc-nav-text">2. Memory Consistency Errors</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#3-同步方法"><span class="toc-nav-number">1.2.3.</span> <span class="toc-nav-text">3. 同步方法</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#4-Intrinsic-Locks"><span class="toc-nav-number">1.2.4.</span> <span class="toc-nav-text">4. Intrinsic Locks</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#5-Atomic-Access"><span class="toc-nav-number">1.2.5.</span> <span class="toc-nav-text">5. Atomic Access</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Liveness"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">Liveness</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#1-Deadlock"><span class="toc-nav-number">1.3.1.</span> <span class="toc-nav-text">1. Deadlock</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#2-饥饿和活锁"><span class="toc-nav-number">1.3.2.</span> <span class="toc-nav-text">2. 饥饿和活锁</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Guarded-Blcoks"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">Guarded Blcoks</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Immutable"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">Immutable</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#高级并发对象"><span class="toc-nav-number">1.6.</span> <span class="toc-nav-text">高级并发对象</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#1-Lock-Objects"><span class="toc-nav-number">1.6.1.</span> <span class="toc-nav-text">1. Lock Objects</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#2-Executors"><span class="toc-nav-number">1.6.2.</span> <span class="toc-nav-text">2. Executors</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#3-Concurrent-Collections"><span class="toc-nav-number">1.6.3.</span> <span class="toc-nav-text">3. Concurrent Collections</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#4-Atomic-Variables"><span class="toc-nav-number">1.6.4.</span> <span class="toc-nav-text">4. Atomic Variables</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#5-Concurrent-Random-Numbers"><span class="toc-nav-number">1.6.5.</span> <span class="toc-nav-text">5. Concurrent Random Numbers</span></a></li></ol></li></ol></li></ol>
+        
+        </div>
+      </aside>
+    
+
 
       <!-- Sidebar Container -->
       <div class="
@@ -676,6 +693,8 @@
             <a href="/tags/">FEATURED TAGS</a>
           </h5>
           <div class="tags">
+            
+            <a class="tag" href="/tags/#java" title="java">java</a>
             
           </div>
         </section>
@@ -822,7 +841,7 @@
         </ul>
         <p class="copyright text-muted">
           Copyright &copy;
-          Your Name
+          Yan
           2020
           <br>
           Theme by
@@ -914,7 +933,7 @@ https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0
 <!-- <script> async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){ hljs.initHighlightingOnLoad(); }) </script> <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet"> -->
 
 <!-- jquery.tagcloud.js -->
-<!-- <script> // only load tagcloud.js in tag.html if($('#tag_cloud').length !== 0){ async("http://yoursite-url/js/jquery.tagcloud.js",function(){ $.fn.tagcloud.defaults = { //size: {start: 1, end: 1, unit: 'em'}, color: {start:
+<!-- <script> // only load tagcloud.js in tag.html if($('#tag_cloud').length !== 0){ async("http://endp.xyz/js/jquery.tagcloud.js",function(){ $.fn.tagcloud.defaults = { //size: {start: 1, end: 1, unit: 'em'}, color: {start:
 '#bbbbee', end: '#0085a1'}, }; $('#tag_cloud a').tagcloud(); }) } </script> -->
 
 
@@ -1246,7 +1265,7 @@ https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0
 	
 
 	<!-- Image to hack wechat -->
-	<!-- <img src="http://yoursite-url/img/icon_wechat.png" width="0" height="0" /> -->
+	<!-- <img src="http://endp.xyz/img/icon_wechat.png" width="0" height="0" /> -->
 	<!-- Migrate from head to bottom, no longer block render and still work -->
 
 </body>

@@ -1,0 +1,1459 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag (contains Google-Analytics、Baidu-Tongji)-->
+<head>
+  <!-- Google Analytics -->
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-xxxxxx-xx"></script>
+  <script type="text/javascript">
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-xxxxxx-xx');
+  </script>
+  
+
+  <!-- Baidu Tongji -->
+  
+  <script type="text/javascript">
+    // Originial
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+  
+
+  <!-- Baidu Push -->
+  
+  <script>
+    (function() {
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      } else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+  
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <meta name="google-site-verification" content="lxDfCplOZbIzjhG34NuQBgu2gdyRlAtMB4utP5AgEBc" />
+  <meta name="baidu-site-verification" content="PpzM9WxOJU" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="It&#39;s an IT blog..." />
+  <meta name="keyword" content="v-vincen,v-vincen,livemylife,IT  blog,Blog" />
+  <link rel="shortcut icon" href="/img/avatar/roguerabbit.jpg" />
+
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async="async" defer="defer" src="https://buttons.github.io/buttons.js"></script>
+  <!-- Bootstrap Core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.min.css" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/beantech.min.css" />
+
+  <!-- Pygments Highlight CSS -->
+  
+<link rel="stylesheet" href="../../../../css/highlight.css">
+<link rel="stylesheet" href="../../../../css/widget.css">
+<link rel="stylesheet" href="../../../../css/rocket.css">
+<link rel="stylesheet" href="../../../../css/signature.css">
+<link rel="stylesheet" href="../../../../css/catalog.css">
+<link rel="stylesheet" href="../../../../css/livemylife.css">
+
+
+  
+  <!-- wave start -->
+  <link rel="stylesheet" href="/css/wave.css" />
+  <!-- wave end -->
+  
+
+  
+  <!-- top start (article top hot config) -->
+  <link rel="stylesheet" href="/css/top.css" />
+  <!-- top end -->
+  
+
+  
+  <!-- ThemeColor start -->
+  <link rel="stylesheet" href="/css/scroll.css" />
+  <!-- ThemeColor end -->
+  
+
+  
+  <!-- viewer start (Picture preview) -->
+  <link rel="stylesheet" href="/css/viewer.min.css" />
+  <!-- viewer end -->
+  
+
+  
+  <!-- Search start -->
+  <link rel="stylesheet" href="/css/search.css" />
+  <!-- Search end -->
+  
+
+  
+  <!-- ThemeColor start -->
+  <link rel="stylesheet" href="/css/themecolor.css" />
+  <!-- ThemeColor end -->
+  
+
+  
+
+  
+  <!-- gitalk start -->
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css"> -->
+  <link rel="stylesheet" href="/css/gitalk.css" />
+  <!-- gitalk end -->
+  
+
+  <!-- Custom Fonts -->
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+  <!-- Hux change font-awesome CDN to qiniu -->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Hux Delete, sad but pending in China <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'> <link
+    href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/ css'> -->
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
+
+  <!-- ga & ba script hoook -->
+  <link rel="canonical" href="http://endp.xyz/2020/07/05/源码_SS_2/">
+  <title>
+    
+    SS源码（下） - Relax!
+    
+  </title>
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+
+<!-- hack iOS CSS :active style -->
+
+<body ontouchstart="" class="body--home">
+	<!-- ThemeColor -->
+	
+	<!-- ThemeColor -->
+<!-- <div class="toggle" onclick="document.body.classList.toggle('body--dark')">Switch Color</div> -->
+
+<div class="toggle" onclick="document.body.classList.toggle('body--dark')">
+  <i class="mdui-icon material-icons bright-mode"></i>
+  <i class="mdui-icon material-icons dark-mode"></i>
+</div>
+
+	
+
+	<!-- Gitter -->
+	
+	<!-- Gitter -->
+<!-- Docs:https://gitter.im/?utm_source=left-menu-logo -->
+<script>
+  ((window.gitter = {}).chat = {}).options = {
+    room: 'your-community/your-room'
+  };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+
+	
+
+	<!-- Navigation (contains search)-->
+	<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">语言的漩涡</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="/">Home</a>
+          </li>
+
+          
+
+          
+          
+
+          
+          <li>
+            <a href="/about/">About</a>
+          </li>
+          
+          
+
+          
+          <li>
+            <a href="/archive/">Archives</a>
+          </li>
+          
+          
+
+          
+          <li>
+            <a href="/categories/">Categories</a>
+          </li>
+          
+          
+
+          
+          <li>
+            <a href="/tags/">Tags</a>
+          </li>
+          
+          
+
+          
+          <li><a class="popup-trigger" title="Search"><span class="search-icon"></span>Search</a></li>
+          
+        </ul>
+      </div>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+<!-- progress -->
+<div id="progress">
+  <div class="line" style="width: 0%;"></div>
+</div>
+
+
+<script>
+  // Drop Bootstarp low-performance Navbar
+  // Use customize navbar with high-quality material design animation
+  // in high-perf jank-free CSS3 implementation
+  var $body = document.body;
+  var $toggle = document.querySelector('.navbar-toggle');
+  var $navbar = document.querySelector('#huxblog_navbar');
+  var $collapse = document.querySelector('.navbar-collapse');
+
+  $toggle.addEventListener('click', handleMagic)
+
+  function handleMagic(e) {
+    if ($navbar.className.indexOf('in') > 0) {
+      // CLOSE
+      $navbar.className = " ";
+      // wait until animation end.
+      setTimeout(function() {
+        // prevent frequently toggle
+        if ($navbar.className.indexOf('in') < 0) {
+          $collapse.style.height = "0px"
+        }
+      }, 400)
+    } else {
+      // OPEN
+      $collapse.style.height = "auto"
+      $navbar.className += " in";
+    }
+  }
+</script>
+
+
+	<!-- Post Header (contains intro-header、signature、wordcount、busuanzi、waveoverlay) -->
+	<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+
+  <style type="text/css">
+    header.intro-header {
+       /*post*/
+        background-image: url('/img/header_img/ss.png');
+      
+    }
+
+    
+      #signature {/*signature*/
+        background-image: url('/img/signature/vincent-white.png');
+      }
+    
+  </style>
+
+
+
+
+
+<header class="intro-header">
+  <!-- Signature -->
+  <div id="signature">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#network" title="network">network</a>
+              
+            </div>
+            <h1>SS源码（下）</h1>
+            <h2 class="subheading"></h2>
+            <span class="meta">
+              Posted by Yan on
+              2020-07-05
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">24</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">6.5k</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- 不蒜子统计 start -->
+            <span class="meta">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            <!-- WordCount end -->
+            
+
+
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- waveoverlay start -->
+  <div class="preview-overlay">
+    <svg class="preview-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+      </defs>
+      <g class="preview-parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill=var(--gentle-wave1)></use>
+        <use xlink:href="#gentle-wave" x="48" y="3" fill=var(--gentle-wave2)></use>
+        <use xlink:href="#gentle-wave" x="48" y="5" fill=var(--gentle-wave3)></use>
+        <use xlink:href="#gentle-wave" x="48" y="7" fill=var(--gentle-wave)></use>
+      </g>
+    </svg>
+  </div>
+  <!-- waveoverlay end -->
+  
+
+</header>
+
+
+
+	<!-- Main Content (Post contains
+	Pager、
+	tip、
+	socialshare、
+	gitalk、gitment、disqus-comment、
+	Catalog、
+	Sidebar、
+	Featured-Tags、
+	Friends Blog、
+	anchorjs、
+	) -->
+	<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <p>[toc]</p>
+<h2 id="Part1"><a href="#Part1" class="headerlink" title="Part1"></a>Part1</h2><h3 id="SS涉及的个体"><a href="#SS涉及的个体" class="headerlink" title="SS涉及的个体"></a>SS涉及的个体</h3><ol>
+<li>用户程序</li>
+<li>sslocal，位于本地，用于转发用户程序发来的消息给ssserver</li>
+<li>ssserver，位于代理服务器，转发sslocal的消息给remote</li>
+<li>remote，用户所要访问的远程服务器</li>
+</ol>
+<hr>
+<h3 id="SS的工作流程"><a href="#SS的工作流程" class="headerlink" title="SS的工作流程"></a>SS的工作流程</h3><ol>
+<li>用户程序与sslocal建立TCP连接</li>
+<li>用户程序与sslocal通过socks5协议进行协商<ol>
+<li>协议版本和通信方法（如：是否使用加密）的协商</li>
+<li>用户程序向sslocal发送请求，请求中包括请求类型，与remote的地址和端口</li>
+<li>sslocal对不同的请求做出相应的回应，响应中包括是否同意请求与sslocal用于消息转发的地址与端口</li>
+</ol>
+</li>
+<li>sslocal想ssssver发送2b中接收到的remote的地址与端口</li>
+<li>ssserver建立TCP连接</li>
+<li>用户程序向sslocal发送消息，sslocal对消息加密后将其转发给ssserver</li>
+<li>ssserver收到并解密消息，并将消息转发给remote</li>
+</ol>
+<p>sslocal和sssever之间并不使用socks5协议进行通信</p>
+<hr>
+<h3 id="Socks5协议"><a href="#Socks5协议" class="headerlink" title="Socks5协议"></a><a href="https://www.ietf.org/rfc/rfc1928.txt" target="_blank" rel="noopener">Socks5协议</a></h3><p><em>这里的客户端与服务器分别指的是用户程序与sslocal，不是sslocal与ssserver</em></p>
+<p>Socks5协议作用于客户端与服务器之间建立联系，为于OSI模型的会话层，在传输层和表示层之间。</p>
+<p>客户端与服务器建立TCP连接，端口为服务器指定的端口，客户端连接到服务后，发送协议版本和方法到服务器，服务器选择合适的方法，并将其指代数字发挥客户端，如果回复的方法为<code>X&#39;FF&#39;</code>，则服务器拒绝使用客户端提供的所有方法，并与客户端断开连接。</p>
+<p>确立完方法后，客户端和服务端按照该方法再次进行协商，协商完成后，客户端发送请求消息，请求格式如下：</p>
+<table>
+<thead>
+<tr>
+<th align="center">VER</th>
+<th align="center">CMD</th>
+<th align="center">RSV</th>
+<th align="center">ATYP</th>
+<th align="center">DST.ADDR</th>
+<th align="center">DST.PORT</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">X’00’</td>
+<td align="center">1</td>
+<td align="center">Variable</td>
+<td align="center">2</td>
+</tr>
+</tbody></table>
+<ul>
+<li>VER 协议版本号</li>
+<li>CMD<ul>
+<li>CONNECT X’01’</li>
+<li>BIND X’02’</li>
+<li>UDP ASSOCIATE X’03’</li>
+</ul>
+</li>
+<li>RSV</li>
+<li>ATYP  地址类型<ul>
+<li>IPv4  X’01’</li>
+<li>DOMAINNAME  X’03’</li>
+<li>IPv6  X’04’</li>
+</ul>
+</li>
+<li>DST.ADDR  目的地址</li>
+<li>DST.PORT   目的端口</li>
+</ul>
+<p>服务器收到请求后，对请求的源地址与目的地址进行评估，然后向客户端发送回复消息，格式如下：</p>
+<table>
+<thead>
+<tr>
+<th align="center">VER</th>
+<th align="center">REP</th>
+<th align="center">RSV</th>
+<th align="center">ATYP</th>
+<th align="center">BND.ADDR</th>
+<th align="center">BND.PORT</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">X’00’</td>
+<td align="center">1</td>
+<td align="center">Variable</td>
+<td align="center">2</td>
+</tr>
+</tbody></table>
+<ul>
+<li>REP  Reply field:<ul>
+<li>X’00’ succeeded</li>
+<li>X’01’ general SOCKS server failure</li>
+<li>X’02’ connection not allowed by ruleset</li>
+<li>X’03’ Network unreachable</li>
+<li>X’04’ Host unreachable</li>
+<li>X’05’ Connection refused</li>
+<li>X’06’ TTL expired</li>
+<li>X’07’ Command not supported</li>
+<li>X’08’ Address type not supported</li>
+<li>X’09’ to X’FF’ unassigned</li>
+</ul>
+</li>
+<li>BND.ADDR: 服务端绑定的IP的地址，一般与用于和客户端连接的IP地址不同，因为一般的服务器是多宿主的</li>
+<li>BND.PORT: 服务器绑定的端口，该端口是服务器用于监听来电连接所用的</li>
+</ul>
+<hr>
+<h3 id="源码位置：tests-test-py"><a href="#源码位置：tests-test-py" class="headerlink" title="源码位置：tests/test.py"></a>源码位置：<code>tests/test.py</code></h3><p>测试代码中的服务器和客户端都是在本地模拟的<br>包括5个阶段：</p>
+<ol>
+<li><p>启动SS客户端以及服务器端；使用popen打开python 和对应的客户端进程与服务端进程，选择使用配置文件传递参数。</p>
+</li>
+<li><p>新建curl进程，遇到的问题是：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">socket</span><span class="selector-class">.error</span>: <span class="selector-attr">[Errno 99]</span> <span class="selector-tag">Cannot</span> <span class="selector-tag">assign</span> <span class="selector-tag">requested</span> <span class="selector-tag">address</span></span><br></pre></td></tr></table></figure>
+<p>解决办法：给ssserver分配ssserver的本地地址</p>
+</li>
+<li><p>curl finished     这一步失败了</p>
+</li>
+<li><p>dig started　　不存在该脚本</p>
+</li>
+<li><p>dig finished       不存在该脚本</p>
+</li>
+</ol>
+<hr>
+<h3 id="源码位置：shadowsocks-tcprelay"><a href="#源码位置：shadowsocks-tcprelay" class="headerlink" title="源码位置：shadowsocks/tcprelay"></a>源码位置：<code>shadowsocks/tcprelay</code></h3><p>服务器端直接对受到的ip报文还是tcp报文进行转发？如果是直接转发报文，为什么还要在请求消息中声明目的地址？直接转发不就好了吗？</p>
+<p>应该是转发tcp报文？所以才需要Ip地址的，但是为什么还要接口号呢？难道转发的tcp以上的层的报文，然后封装为ip在转发？</p>
+<p>嗯，服务器肯定转发的肯定是TCP以上的报文，因为需要连接的主机需要知道服务器的端口号</p>
+<p>应用与本地的客户端接口建立TCP连接，客户端把像服务器提交请求，请求成功后，客户端发送消息给服务器，服务器把消息转发给远程主机</p>
+<p>服务器需要与远程主机建立tcp连接吗？需要，因为远程主机需要把信息发送给代理服务器</p>
+<p>代理服务器在拆封的时候，直接更改源端口和目的端口就可以啦？</p>
+<p>客户端需要与sslocal建立TCP连接，连接后需要通过SOCKS5完成验证和请求，完成后客户端向sslocal发送消息，sslocal负责加密并传送到ssserver上去，ssserver在传递给remote host</p>
+<p>local上日志</p>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="number">2020</span><span class="number">-07</span><span class="number">-03</span> <span class="number">20</span>:<span class="number">45</span>:<span class="number">08</span> INFO     connecting static.zhihu.com:<span class="number">443</span> <span class="keyword">from</span> <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">54682</span></span><br></pre></td></tr></table></figure>
+
+<p>server上的日志</p>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="number">2020</span><span class="number">-07</span><span class="number">-03</span> <span class="number">20</span>:<span class="number">45</span>:<span class="number">08</span> INFO     connecting static.zhihu.com:<span class="number">443</span> <span class="keyword">from</span> <span class="number">223.89</span><span class="number">.54</span><span class="number">.55</span>:<span class="number">3413</span></span><br></pre></td></tr></table></figure>
+
+<p>说明local发给server的消息的端口不是local接收client消息的端口</p>
+<p>local在1081端口接收消息，并通过新的端口向客户端发送消息</p>
+<p>local与client之间通过TCP连接并通过SOCKS5协商，local与server都要对消息进行转发和接收</p>
+<p>client和local建立tcp连接，client发送请求给local，请求中包括远程主机的地址和端口，local回复client的请求，请求报文中包含绑定地址和接口。然后client开始直接传递消息（比如http包）给local，local负责加密和转发。server接收到local转发的消息后，进行解密，然后发送消息给远程主机。<strong>server是怎么知道消息的目的ip和端口的呢？local告诉他的？那local是通过什么协议告诉他的？tcp还是socks？</strong></p>
+<p>tcp relay在local上是负责把消息转发给server吗？需要对接local的计入端口吗？</p>
+<p><strong>server是如何知道把消息转发给谁呢？</strong>如果server和local之间只是简单的消息转发，那么server是怎么知道地址的？</p>
+<p>client与local  loca与server  server与remote</p>
+<p>server与local之间建立的是tcp连接</p>
+<p>client与local建立的连接要有一个handler，hander有两个端口，一个端口监听10808另一个端口负责向服务器发送数据</p>
+<p>server的连接要有一个handler，handler有两个端口，一个监听portnumber,另一个负责向remote转发</p>
+<p>比如local告诉server要建立与google之间的tcp连接，建立后，local通过一个端口向server转发消息，server得到消息后，怎么知道这个消息是是要转发给google的呢，通过消息来源的端口号吗？不是说他们两个之间是没有socks5协议的吗？</p>
+<hr>
+<h3 id="tcprelay-py"><a href="#tcprelay-py" class="headerlink" title="tcprelay.py"></a>tcprelay.py</h3><p>对于每一个打开着的端口，都存在一个TCP Relay</p>
+<p>对于每一个连接，都有一个TCP Relay Handler来处理这个连接</p>
+<p>每个handler，都有两个sockets：</p>
+<p>local: 连接到client            remote：连接到 remote server</p>
+<p>每个handler，都可能处于以下任意一个阶段：</p>
+<p>as sslocal:</p>
+<ol>
+<li><p>stage 0，验证从local接收到方法并回复选择信息                 </p>
+<p>STAGE_INIT</p>
+</li>
+<li><p>stage 1，接收来自local的地址，向DNS请求remote的IP   </p>
+<p> STAGE_ADDR</p>
+</li>
+<li><p>stage2，UDP assoc</p>
+<p>STAGE_UDP_ASSOC</p>
+</li>
+<li><p>stage3，DNS解析成功，连接remote</p>
+<p>STAGE_DNS</p>
+</li>
+<li><p>stage4，仍在连接，从local获取更多的数据</p>
+<p>STAGE_CONNECTING </p>
+</li>
+<li><p>stage5，连接到remote，在local和remote之间建立起管道连接</p>
+<p>STAGE_STREAM </p>
+</li>
+</ol>
+<p>as ssserver:</p>
+<ol>
+<li>stage 0，进入stage 1</li>
+<li>stage 1, 接收来自local的地址，向DNS请求remote的IP</li>
+<li>stage 3, DNS解析成功，连接remote</li>
+<li>stage 4, 仍在连接，从local获取更多的数据</li>
+<li>stage 5, 连接到remote，在local和remote之间建立起管道连接</li>
+</ol>
+<p>每个handler，都有两个流向：</p>
+<p>上行流：从client到server方向，读取local的数据并写入到remote</p>
+<p>下行流：从server到client方向，读取remote的数据并写入到local</p>
+<p>每个流要么在等待着读要么在等待着写，要不然等待着读和写</p>
+<p>对于sslocal：    remote_addr就是目的地址(<a href="http://www.youtube.com)，remote_port就是目的端口号(443)，client_address就是用户程序，对于" target="_blank" rel="noopener">www.youtube.com)，remote_port就是目的端口号(443)，client_address就是用户程序，对于</a></p>
+<p>_handle_stage_connecting里的</p>
+<p>self._loop.add(remote_sock, eventloop.POLL_ERR, self._server)  添加事件，sslocal的，应该是在这里把他和server的socket绑起来</p>
+<p>write_to_sock，向socket中写入数据，如果只有部分数据被写入，会把剩余的数据加入到<code>_data_to_write_to_local</code>或者<code>_data_to_write_to_remote</code>中，并更新的下行流或者是上行流的状态为等待写入。如果所有的数据都被写入成功，会更新下行流或者上行流的状态为等待读取。下行流对应的是handler中的sslocal，从remote中读取并写入到local中。      </p>
+<p><em># for each handler, we have 2 stream directions:</em></p>
+<p><em>#  upstream:  from client to server direction</em></p>
+<p><em>#         read local and write to remote</em></p>
+<p><em>#  downstream: from server to client direction</em></p>
+<p><em>#         read remote and write to local</em></p>
+<p>是说sslocal对应的流都是下行流还是说，只要数据的流向是从sockets到client都算是下行流</p>
+<p><strong>事件处理</strong>流程：</p>
+<p>在<code>tcprelay</code>中逻辑很简单，如果发生事件（可读事件）的 <code>socket</code> 是 <code>TCPRelay</code> 的 <code>socket</code>，说明有新的 TCP 连接，创建一个 <code>TCPRelayHandler</code> 对象将新连接封装起来。否则，找到发生事件的 <code>TCPRelayHandler</code>，将事件交给它处理。</p>
+<p>在<code>tcprelayhandler</code>中逻辑也很简单，一个<code>tcprelay_handler</code>对应于两个<code>socket</code>分别为<code>remote</code>和<code>local</code>。对于发生在<code>remote</code>套接字的事件，<code>tcprealyhandler</code>会把事件根据其读写类型分发给<code>_on_remote_read()</code>或者<code>_on_remote_write()</code>。<code>_on_remote_read()</code>在其内部会读取数据，并把数据写入到<code>local_sock</code>中，<code>on_remote_write</code>在其内部会把<code>_data_to_write_to_remote</code>的数据写到<code>remote_sock</code>中。对于发生在<code>local</code>套接字的时间，<code>tcprealyhandler</code>会把事件根据其读写类型分发给<code>_on_local_read()</code>或者<code>_on_local_write()</code>。<code>on_local_read()</code>在其内部，会根据当前所在的阶段吧数据交给对应的<code>handle_stage_XXX()</code>进行处理。<code>on_local_write()</code>在其内部，会把<code>_data_to_write_to_local</code>中的数据写入到<code>local_sock</code>中。</p>
+<hr>
+<h3 id="Eventloop-py"><a href="#Eventloop-py" class="headerlink" title="Eventloop.py"></a>Eventloop.py</h3><p>run方法的工作流程：获取事件，通过事件的<code>fd</code>找对对应的<code>handler</code>，一个<code>handler</code>可能对应多个<code>fd</code>，<code>handler</code>可能是<code>TCPRelay</code>、<code>UDPRelay</code>或<code>DNSResovler</code>。<code>eventloop</code>里的<code>fd</code>是<code>socket</code>对应的<code>fd</code>，根据<code>fd</code>可以找对应的<code>handler</code>,如<code>tcprelay_handler</code>,然后调用<code>tcprelay</code>的<code>handle_event</code>来处理事件</p>
+<p>loop中的add，向I/O模型注册了文件描述符，并把文件描述符和handler之间的对应关系存储到词典中</p>
+<p><code>Tcprelay</code>对象的<code>add_to_loop</code>，添加<code>eventloop</code>并向<code>eventloop</code>中添加<code>_server_socket</code></p>
+<p>select：支持多文件描述符的异步I/O的模块</p>
+<p>Reactor 设计模式: Reactor是一种事件处理模式，用于处理由一个或者多个输入并发传递给某一个service handler的服务请求。service handler随后对这些请求进行解耦并将其同步地下发给与之关联的request handler。</p>
+<p>eventloop是用于程序内用于等待和分发事件或消息的程序结构。</p>
+<p>是咋分发的：tcprelayer的handle_event调用handler的handle_event，handler的handle_event查看事件是<code>POLL_IN</code>还是<code>POLL_OUT</code>以及发生在那个socket上来调用local_read、local_write、remote_read、remote_write，进而调用各种handle函数来实现事件处理</p>
+<p>eventloop封装了三种常见的IO符用函数–epoll、kqueue、select，提供统一的接口（如果只用epoll该怎么写呢？）<strong>从这里看eventloop是完全独立的一个类，实现了去耦合</strong>。windows下，只支持sockets对应的文件描述符，在linux下支持所有的文件描述符</p>
+<h3 id="Todo"><a href="#Todo" class="headerlink" title="Todo"></a>Todo</h3><ul>
+<li><input disabled="" type="checkbox"> <p>Reactor设计模式</p>
+</li>
+<li><input disabled="" type="checkbox"> <p>Eventloop 和 Reactor有什么区别</p>
+<p>Reactor是一种事件驱动的I/O处理设计模式。Eventloop实现了异步（业务代码到程序框架之间的），进程发出I/O请求后，由Eventloop线程执行，完成I/O后，由Eventloop调用相应的回调函数</p>
+</li>
+<li><input checked="" disabled="" type="checkbox"> <p>epoll是监视文件描述符是否发生变化，然后通知用户的吗？还是用户提出请求，epoll再实现，为什么说epoll是同步的？是用户还是socket在轮询文件描述符是否发生了变化</p>
+<p>epoll是可伸缩的事件通知机制的系统调用，其功能是监视多个文件描述符，查看其中是否可以进行I/O的文件描述符。其目的是为了取代<code>select</code>和<code>poll</code>，在有很多需要监视的文件描述符时，实现高性能。<code>epoll</code>使用红黑树来追踪文件描述符，其时间复杂度为<em>O(1)</em>，而后两者的时间复杂度为<em>O(n)</em>。</p>
+<p>eopll和FreeBSD的<code>kqueue</code>很像</p>
+</li>
+<li><input checked="" disabled="" type="checkbox"> <p>阻塞非阻塞与同步异步的区别：</p>
+<p>网络编程I/O模型里的同步非同步说的是在内核向进程内读写时，进程是否需要参与读写（调用完成后是否返回数据），如果进程只是在内核拷贝完成后才接收到信号通知则这里的I/O是异步的；阻塞和非阻塞说的是，在数据尚未到达内核时，进程受否需要需要等待数据到达，如果不需要等待到达，系统调用直接返回失败值，此时为非阻塞。</p>
+<p>输入操作一般分为两个阶段：1）等待数据准备好，2）从内核向进程复制数据；默认情况下，所有的套接字都是阻塞的。</p>
+</li>
+</ul>
+<p><img src="https://pic3.zhimg.com/80/7d3eb389b7724878bd7e12ebc6dbcdb5_720w.jpg?source=1940ef5c" alt="img"></p>
+<img src="https://pic3.zhimg.com/80/8244d924a12eaf42d61b41718c559bff_720w.jpg" alt="img"  />
+
+
+
+<hr>
+<h2 id="Part-2-按日期"><a href="#Part-2-按日期" class="headerlink" title="Part 2(按日期)"></a>Part 2(按日期)</h2><h3 id="整理tcprelay-handler的handle-event函数"><a href="#整理tcprelay-handler的handle-event函数" class="headerlink" title="整理tcprelay_handler的handle_event函数"></a>整理tcprelay_handler的handle_event函数</h3><h4 id="tcprelay-的handle-event："><a href="#tcprelay-的handle-event：" class="headerlink" title="tcprelay 的handle_event："></a>tcprelay 的handle_event：</h4><p><strong>语法</strong>：handle_event(self, sock, fd, event)    <strong><u><em>（有sock了为啥还需要fd？ 为啥不是sock_to_handler）</em></u></strong></p>
+<p>如果sock是监听接口，则创建新的连结，并新建<code>TCPRelayHandler</code>用于管理这个链接。如果不是监听接口，通过<code>fd_to_handler</code>找到对应的<code>handler</code>，并调用这个<code>handler</code>的<code>handle_event</code>方法。异常处理采用的是<code>errno</code>。</p>
+<h4 id="TCPRelayHandler-的handle-event"><a href="#TCPRelayHandler-的handle-event" class="headerlink" title="TCPRelayHandler 的handle_event:"></a>TCPRelayHandler 的handle_event:</h4><p>语法：handle_event(self, sock, event)     </p>
+<p>如果sock是<code>_local_sock</code>则，且事件类型为<code>POLL_IN</code>，则调用<code>_on_local_read()</code>方法，如果事件类型为<code>POLL_OUT</code>，则调用<code>_on_local_write()</code>方法。</p>
+<p>如果sock是<code>_remote_sock</code>，则分别调用<code>_on_remote_read()</code>和<code>_on_remote_write()</code>方法。</p>
+<h4 id="TCPRelayHandler在local-sock和remote-sock上的读写操作"><a href="#TCPRelayHandler在local-sock和remote-sock上的读写操作" class="headerlink" title="TCPRelayHandler在local_sock和remote_sock上的读写操作"></a>TCPRelayHandler在local_sock和remote_sock上的读写操作</h4><p>写操作：</p>
+<ol>
+<li>remote上，<strong><u><em>更新stage为什么</em></u></strong>，然后写，如果缓存中没有，更新流的状态为上行等待；</li>
+<li>local上，直接写，如果缓存中没有，更新流的状态为下行等待。</li>
+</ol>
+<p>读操作：</p>
+<ol>
+<li>remote上，读取数据（client上要解密，server上的要加密），然后由local发送出去，方向为下行；</li>
+<li>local上，读取数据（server上的要解密），然后交由各个<code>_handle_stage_XXX</code>函数操作，然后由remote发送出去，方向为上行。其中<code>_handle_stage_stream</code>会把数据（client上的要加密）交给<code>_remote_sock</code>。</li>
+</ol>
+<h3 id="整理SS的tcprelay-py的各个阶段的有限状态机"><a href="#整理SS的tcprelay-py的各个阶段的有限状态机" class="headerlink" title="整理SS的tcprelay.py的各个阶段的有限状态机"></a>整理SS的tcprelay.py的各个阶段的有限状态机</h3><h4 id="对于客户端："><a href="#对于客户端：" class="headerlink" title="对于客户端："></a>对于客户端：</h4><p><em># as sslocal:</em></p>
+<p><em># stage 0 auth METHOD received from local, reply with selection message</em></p>
+<p><em># stage 1 addr received from local, query DNS for remote</em></p>
+<p><em># stage 2 UDP assoc</em></p>
+<p><em># stage 3 DNS resolved, connect to remote</em></p>
+<p><em># stage 4 still connecting, more data from local received</em></p>
+<p><em># stage 5 remote connected, piping local and remote</em></p>
+<p><em># as ssserver:</em></p>
+<p><em># stage 0 just jump to stage 1</em></p>
+<p><em># stage 1 addr received from local, query DNS for remote</em></p>
+<p><em># stage 3 DNS resolved, connect to remote</em></p>
+<p><em># stage 4 still connecting, more data from local received</em></p>
+<p><em># stage 5 remote connected, piping local and remote</em></p>
+<h4 id="对于服务器"><a href="#对于服务器" class="headerlink" title="对于服务器"></a>对于服务器</h4><p>使用common.py来解析数据；</p>
+<p>stage 0  获取数据后，验证方法校验，并从_local_sock发送不使用任何校验方法的信息响应，然后转入<code>STAGE_ADDR</code>状态。</p>
+<p>stage1 获取数据后，获取命令信息，建立返回消息的头部，获取远程地址和端口。对于客户端，会暂停上行流（应该是要等待DNS和建立remote_sock完了才会上行），更新到<code>STAGE_DNS</code>，会向应用程序返回响应消息，响应消息里的地址和端口号为默认的无意义的值<code>\x00\x00\x00\x00\x10\x10</code>，然后把远程地址和远程端口放到<code>_data_to_write_to_remote</code>里，紧接着调用<code>_dns_resolver.resolve</code>。对于服务器，接收到的消息是缺少<code>VER REP RSV ATYP</code>头部的，会直接获取远程地址和端口，然后暂停上行流，更新到<code>STAGE_DNS</code>，不向客户端返回消息，直接调用<code>_dns_resolver.resolve</code>。<code>_dns_resolver.resolve</code>的参数由远程地址以及<code>_handle_dns_resolved</code>回调函数两部分组成。</p>
+<p>stage3 (_handle_dns_resolved)获取数据后，更新到<code>STAGE_CONNECTING</code>阶段，如果是服务器，创建<code>_remote_sock</code>，并连接到远程，添加<code>_remote_sock</code>到<code>event_loop</code>然后更新流的状态为等待上下读写和等待下行读。如果是客户端且已经开启<code>fast_open</code>，则更新当前流的状态为等待读，客户端等待更多的数据到来，并把这些数据放到一个<code>SYN</code>中发送。<br><code>handle_dns_resolved</code>只能由<code>handle_stage_addr</code>来调用</p>
+<p>stage4(_handle_stage_connnecting)获取数据后，对于服务器，把数据添加到<code>_data_to_write_to_remote</code>然后返回。对于客户端，把数据加密，然后添加到<code>_data_to_write_to_remote</code>，如果使用了<code>fast_open</code>且<code>fast_open</code>连接未建立，则创建新的<code>remote_sock</code>，连接服务器后，添加到<code>eventloop</code>，并把数据由<code>remote_sock</code>发出，更新流此时状态为等待上行读写。</p>
+<p>stage5(_hanlde_stage_stream)，获取数据后，对于服务器，把数据从<code>_remote_sock</code>中转发出去，对于客户端，把数据从<code>_remote_sock</code>中转发出去。<br><code>STAGE_STREAM</code>在<code>_on_remote_write</code>中设置</p>
+<p><code>_update_stream()</code>有啥用<br>为啥有的时候，把数据放到了<code>_data_to_write_to_remote</code>，有的时候直接就从<code>remote_sock</code>中发走了？<br>TCP Fast Open简化握手手续的TCP连接的拓展，加快连接的速度。</p>
+<p>服务器接收到地址和端口，进行DNS查询，建立端口，然后连接远程服务器，并等待转发；没有<code>STAGE_INIT</code>的阶段，<code>STAGE_ADDR</code>阶段接收到的消息只有远程的地址和端口，并且该阶段不会回复消息，<code>STAGE_CONNECT</code>阶段把数据放在<code>_data_to_write_to_remote</code>中，<code>STAGE_STREAM</code>阶段直接从<code>_remote_sock</code>中进行转发。</p>
+<p><code>_update_stream</code>,上行可读对应的是<code>_local_sock</code>的<code>POLL_IN</code>,上行可写对应的是<code>_remote_sock</code>的<code>POLL_OUT</code>。</p>
+<p><code>write_to_sock</code>会根据当前的<code>sock</code>和是否全部发送成功来更新上下流的状态。<br>sock啥时候是可写的？如果现在可写了但没写，再次等待会不会还会把这个事件拿出来？<br>客户端和服务器端的的header都包括啥？<br>有限状态机要画两组</p>
+<p>_create_remote_socket 中的 remote_sock.setblocking(False) 将套接字设置为了非阻塞的，建立连接时，程序会直接往下走，当on_remote_write被调用时，程序才能确认已经建立连接。</p>
+<p>如果发生了_on_remote_write时，还没有进行connect阶段呢？那就直接跳过，<strong>为什么新建完remote后状态为可写，又更新了流的状态为remote的可读呢？</strong></p>
+<p><img src="https://uploads.disquscdn.com/images/c22eefd49407c26ca30285bc0868157bcb3f62a663d980d35fb561ef03c4b3c0.png?w=800&h=384" alt="缩略图"></p>
+<hr>
+<h3 id="Epoll"><a href="#Epoll" class="headerlink" title="Epoll"></a>Epoll</h3><p><strong>fd</strong>:进程的fd对应着内核中的文件打开表里的条目<code>file description</code>，其又对应着相应的文件系统中的<code>inode</code>。</p>
+<p><strong>socket</strong>:每个Socket中都含有等待队列，用于存放被阻塞的进程.</p>
+<h4 id="Select："><a href="#Select：" class="headerlink" title="Select："></a>Select：</h4><p>select的语法：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">select</span><span class="params">(<span class="keyword">int</span> nfds, fd_set *readfds, fd_set *writefds,</span></span></span><br><span class="line"><span class="function"><span class="params">             fd_set *exceptfds, struct timeval, *timeout)</span></span>;</span><br></pre></td></tr></table></figure>
+
+<p><code>select</code>需要监视三个集合<code>readfds</code>、<code>writefds</code>、<code>exceptfds</code>里的文件描述符是否有对应的<code>read</code>、<code>write</code>、<code>except</code>事件。返回时，每个<code>fd</code>都会被原地修改来指明那个<code>fd</code>已经准备好了</p>
+<p>Select的原理：</p>
+<p>使用Select系统调用，会把进程添加到Select指定的fd对应的sockets的等待队列。当网卡把数据转移到内存并发出中断后，中断处理程序会把数据分发到指定的socket中，并从<strong>所有</strong>sockets的等待队列中移除进程，把进程重新放回工作队列，实现唤醒。唤醒后进程轮询查看哪一个fd发生了变化。</p>
+<p>select的返回值是有事件的fd的数目，返回值大于1，是因为当程序调用select时，内核会先遍历一遍socket，如果有一个以上的socket接收缓冲区有数据，那么select直接返回，不会阻塞。如果没有socket有数据，进程才会阻塞。</p>
+<p>select从内核返回进程时，其他的sockets可能也会接收到消息，select只知道至少一个socket有消息，但不知道进程接收到返回消息后，到底有多少socket有消息。</p>
+<p>Select的缺点在于：</p>
+<ol>
+<li>每次都需要把整个的fd列表传给内核; 每次调用select都需要将进程加入到所有监视socket的等待队列，每次唤醒都需要从每个队列中移除,这里涉及了两次遍历（遍历fdset）。</li>
+<li>进程被唤醒后，进程还需要主动地遍历所有的fd,查看是否可以进行I/O</li>
+</ol>
+<p>Epoll的改进在于：</p>
+<ol>
+<li>等待队列的维护由<code>epoll_ctl</code>来完成，等待socket的阻塞步骤由<code>epoll_wait</code>来完成，使用<code>epoll_wait</code>时不需要变更等待队列了。</li>
+<li>维护了一个<code>rdlist</code>，<code>epoll</code>返回后不需要再一次遍历了。</li>
+</ol>
+<h4 id="Epoll-1"><a href="#Epoll-1" class="headerlink" title="Epoll"></a>Epoll</h4><p><a href="https://zhuanlan.zhihu.com/p/63179839" target="_blank" rel="noopener">Epoll的工作原理</a>：</p>
+<p>使用<code>epoll_create</code>会创建一个epoll对象，并返回对应的fd，使用<code>epoll_ctl</code>向epoll中添加sock的监视，相当于把epoll对象添加到了sock的等待队列中。</p>
+<p>socket接收到数据后，<strong>中断程序</strong>会操作eventpoll对象，而不是直接操作进程。<strong>中断程序</strong>会向epoll的<code>rdlist</code>中添加socks的引用。</p>
+<p><code>epoll_create</code>和<code>epoll_ctl</code>均没有阻塞和唤醒进程。程序调用<code>epoll_wait</code>后，如果<code>rdlist</code>不为空，会直接返回，如果为空，会阻塞进程。为空时，会把进程添加到epoll的等待队列中，并将其阻塞，接收到数据后，会将其唤醒，并返回<code>rdlist</code>。</p>
+<p><code>rdlist</code>用的是双向链表，便于添加和删除；监视列表用的是红黑树，便于送所、插入和删除。</p>
+<p><a href="https://medium.com/@copyconstruct/the-method-to-epolls-madness-d9d2d6378642" target="_blank" rel="noopener">Epoll语法和底层讲解</a></p>
+<p><code>epoll_create()</code>，创建一个epoll实例，并返回其对应的文件描述符，进程可以使用这个文件描述符来添加，修改和删除需要内核监视的文件描述符。</p>
+<p>当进程A通过<code>fork</code>创建了子进程B时，B也会共享A的文件描述符，其中也包含了epoll实例的文件描述符，由于是fork来的，B与A的epoll实例描述符此时都指向相同的内核内的文件描述，因此当B或A改动epoll的<code>interest list</code>时，A或B的epoll实例的<code>interest list</code>也会受到相同的改动。</p>
+<p>Epoll默认是level-triggered，<code>epoll_wait()</code>只返回已经准备好了的<code>interest list</code>内的子集<code>ready list</code>文件描述符，其<code>ready list</code>只有在其底层的内核文件打开表中的<code>file description</code>准备好时才会更新。Epoll也支持edge-triggered，此时如果文件描述符自上次<code>epoll_wait()</code>后没有发生改变，再次调用<code>epoll_wait()</code>就会发生阻塞。即level-triggered返回已经准备好了的，而edge-triggered则只返回两次<code>epoll_wait()</code>间准备好的，如果没有就会阻塞。</p>
+<p>Epoll监视的内核中的文件打开表里的条目而不是进程传给它的per-process的文件描述符。Epoll创建的返回值就是一个fd，fork时，子进程也会有这个fd。</p>
+<p><strong>select和epoll的对比</strong>：select阻塞后的唤醒，是中断程序直接对socket的等待队列进行操作的；而epoll阻塞后的唤醒，是<strong>epoll自己</strong>操作自己的等待队列，中断程序只会把就绪的sokcs的引用添加到epoll的rdlist中。epoll类似于中介。如果每次就绪的socket很多，select效率是可以接收的，毕竟模型更简单，开销小。</p>
+<h4 id="Poll"><a href="#Poll" class="headerlink" title="Poll"></a>Poll</h4><p>poll的语法:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">poll</span><span class="params">(struct pollfd *fds, <span class="keyword">nfds_t</span> nfds, <span class="keyword">int</span> timeout)</span></span>;</span><br></pre></td></tr></table></figure>
+
+<p><code>pollfd</code>是一个结构体，包含<code>fd</code>、<code>events</code>(requested events)、<code>revents</code>(retured events)三个成员变量，<code>revents</code>里存放事件的返回状态，<code>nfds</code>里有<code>fd</code>的数量。如果请求的时间都没有发生，则会阻塞。<code>poll</code>的返回值是一个非负数，代表了发生了的<code>revents</code>的数目。</p>
+<p>Poll本质上和select没有区别，基于链表实现，没有最大连接数的限制；Select的fd_set是bit mask，因此有固定的大小限制。</p>
+<hr>
+<h3 id="Socket-API"><a href="#Socket-API" class="headerlink" title="Socket API"></a>Socket API</h3><p>Python提供的Socket接口是Unix系统调用直译过来的。</p>
+<p>socket类方法：</p>
+<ul>
+<li>socket(): 返回一个<code>socket</code>对象，<code>socket</code>对象方法实现了多种socket系统调用，socket的接收操作中，buffer分配自动执行的，发送操作的buffer的长度是隐式的。</li>
+<li>getaddrinfo(): 把host/port参数解析为五元组序列，五元组包含创建与之相关联的socket的必要信息</li>
+<li>send(): 发送数据到socket，socket必须已经连接到一个remote socket，并返回已经发送的比特数，如果只发送了数据的一部分，应用程序需要尝试再次发送剩余的数据。send函数只负责将数据提交给协议层，即复制数据到发送缓冲区，数据并不一定马上被传到连接的另一端。</li>
+<li>sendall(): 发送数据到socket，socket必须已经连接到一个remote socket，不像send，sendall会一直尝试发送数据，直到发送完或者发生错误，不会返回已经发送四的字节数</li>
+<li>recv(): 从socket中获取数据（内核接收并存储于缓冲区，缓冲区满了，接端会通知发端，接收窗口关闭win = 0 ），返回值为一个代表接收到的数据的比特对象。参数bufsize是一次接收到的数据的最大值。为了与硬件和网络条件相匹配，bufsize的值应该是一个相对较小的2的幂次方，比如：4096.</li>
+<li>sendto(): 发送数据到socket，这个socket此时不应该连接remote socket，参数address中声明了目的socket，用于发送UDP数据，返回值为发送的比特数</li>
+<li>accept(): 接收连接，socket此时必须绑定地址了并等待连接，返回值为<code>(conn, address)</code>，<code>conn</code>为一个新的可以用于在连该接中发送和接收数据的<code>socket</code>对象，地址为连接另一端的地址（包括ip和port）。服务器发送和接收并不会在其正在监听的<code>scoket</code>上进行，而是在<code>accept</code>返回的<code>socket</code>上进行</li>
+</ul>
+<hr>
+<h3 id="Python语法"><a href="#Python语法" class="headerlink" title="Python语法"></a>Python语法</h3><p>Python一切皆为对象，赋值的时候一直都是传址（把新对象的地址给变量），传值的时候传的是对象的引用值（函数的参数变量与传递进来的实参变量贴向的对象是同一个对象）</p>
+<p>Python在调用callable对象时，先把位置参数填充到最前面的空位，然后再把关键词参数按照标识符填充到接下来对应的空位中去。</p>
+<p>定义函数时的默认参数与调用函数时的关键词参数要区分开，默认参数在定义时只能放到最后，调用函数时关键字参数只能放到最后。</p>
+<p>bytes object: Since bytes objects are sequences of integers (akin to a tuple), for a bytes object <em>b</em>, <code>b[0]</code> will be an integer, while <code>b[0:1]</code> will be a bytes object of length 1. </p>
+<p>The representation of bytes objects uses the literal format (<code>b&#39;...&#39;</code>) since it is often more useful than e.g. <code>bytes([46, 46, 46])</code>.You can always convert a bytes object into a list of integers using <code>list(b)</code>.</p>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="/2020/08/23/maven/" data-toggle="tooltip" data-placement="top" title="Maven">&larr; Previous Post</a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="/2020/07/05/源码_SS_1/" data-toggle="tooltip" data-placement="top" title="SS源码（上）">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+        <!-- tip start -->
+        <div class="tip">
+          <p>
+            If you like this blog or find it useful for you, you are welcome to comment on it. You are also welcome to share this blog, so that more people can participate in it. If the images used in the blog infringe your copyright, please contact the author to delete them. Thank you !
+          </p>
+        </div>
+        <!-- tip end -->
+        
+
+        
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=SS源码（下）&body=Hi,I found this website and thought you might like it http://endp.xyz/2020/07/05/源码_SS_2/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+        <!-- Sharing End -->
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+<!-- gitalk start -->
+<!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
+
+<div id="gitalk-container"></div>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.js"></script> -->
+<script src="/js/comment/gitalk.js"></script>
+
+<script>
+  var gitalk = new Gitalk({
+    clientID: '',
+    clientSecret: '',
+    repo: '',
+    owner: '',
+    admin: '',
+    id: 'Sun Jul 05 2020 02:34:17 GMT+0800', // Ensure uniqueness and length less than 50
+    distractionFreeMode: false, // Facebook-like distraction free mode
+    perPage: 10 ,
+    pagerDirection: 'last',
+    createIssueManually: false ,
+    language: 'en'
+  });
+  gitalk.render('gitalk-container');
+
+  var gtFolded = () => {
+    setTimeout(function() {
+      let markdownBody = document.getElementsByClassName("markdown-body");
+      let list = Array.from(markdownBody);
+      list.forEach(item => {
+        if (item.clientHeight > 250) {
+          item.classList.add('gt-comment-body-folded');
+          item.style.maxHeight = '250px';
+          item.title = 'Click to Expand';
+          item.onclick = function() {
+            item.classList.remove('gt-comment-body-folded');
+            item.style.maxHeight = '';
+            item.title = '';
+            item.onclick = null;
+          };
+        }
+      })
+    }, 800);
+  }
+</script>
+
+<!-- gitalk end -->
+
+
+
+<!-- 2. gitment comment -->
+
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Part1"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">Part1</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#SS涉及的个体"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">SS涉及的个体</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#SS的工作流程"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">SS的工作流程</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Socks5协议"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">Socks5协议</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#源码位置：tests-test-py"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">源码位置：tests&#x2F;test.py</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#源码位置：shadowsocks-tcprelay"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">源码位置：shadowsocks&#x2F;tcprelay</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#tcprelay-py"><span class="toc-nav-number">1.6.</span> <span class="toc-nav-text">tcprelay.py</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Eventloop-py"><span class="toc-nav-number">1.7.</span> <span class="toc-nav-text">Eventloop.py</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Todo"><span class="toc-nav-number">1.8.</span> <span class="toc-nav-text">Todo</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Part-2-按日期"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">Part 2(按日期)</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#整理tcprelay-handler的handle-event函数"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">整理tcprelay_handler的handle_event函数</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#tcprelay-的handle-event："><span class="toc-nav-number">2.1.1.</span> <span class="toc-nav-text">tcprelay 的handle_event：</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#TCPRelayHandler-的handle-event"><span class="toc-nav-number">2.1.2.</span> <span class="toc-nav-text">TCPRelayHandler 的handle_event:</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#TCPRelayHandler在local-sock和remote-sock上的读写操作"><span class="toc-nav-number">2.1.3.</span> <span class="toc-nav-text">TCPRelayHandler在local_sock和remote_sock上的读写操作</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#整理SS的tcprelay-py的各个阶段的有限状态机"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">整理SS的tcprelay.py的各个阶段的有限状态机</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#对于客户端："><span class="toc-nav-number">2.2.1.</span> <span class="toc-nav-text">对于客户端：</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#对于服务器"><span class="toc-nav-number">2.2.2.</span> <span class="toc-nav-text">对于服务器</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Epoll"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text">Epoll</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Select："><span class="toc-nav-number">2.3.1.</span> <span class="toc-nav-text">Select：</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Epoll-1"><span class="toc-nav-number">2.3.2.</span> <span class="toc-nav-text">Epoll</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Poll"><span class="toc-nav-number">2.3.3.</span> <span class="toc-nav-text">Poll</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Socket-API"><span class="toc-nav-number">2.4.</span> <span class="toc-nav-text">Socket API</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Python语法"><span class="toc-nav-number">2.5.</span> <span class="toc-nav-text">Python语法</span></a></li></ol></li></ol>
+        
+        </div>
+      </aside>
+    
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">FEATURED TAGS</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#network" title="network">network</a>
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
+        <hr>
+        <h5>FRIENDS</h5>
+        <ul class="list-inline">
+
+          
+          <li>
+            <a href="https://v-vincen.life/" target="_blank">V_Vincen</a>
+          </li>
+          
+          <li>
+            <a href="http://beantech.org" target="_blank">Bean Tech</a>
+          </li>
+          
+          <li>
+            <a href="http://huangxuan.me" target="_blank">Hux Blog</a>
+          </li>
+          
+          <li>
+            <a href="https://hexo.io/" target="_blank">Hexo</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
+
+
+	<!-- Footer (contains ThemeColor、viewer) -->
+	<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center">
+          
+
+          
+            <li>
+              <a target="_blank" href="https://github.com/V-Vincen">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+            <li>
+              <a target="_blank" href="https://twitter.com/V_Vincen_">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+            <li>
+              <a target="_blank" href="https://www.instagram.com/v_vincen_">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+
+          
+
+          
+
+          
+            <li>
+              <a target="_blank" href="http://weibo.com/WVincen">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+        </ul>
+        <p class="copyright text-muted">
+          Copyright &copy;
+          Yan
+          2020
+          <br>
+          Theme by
+          <a href="http://beantech.org" target="_blank" rel="noopener">BeanTech</a>
+          <span style="display: inline-block; margin: 0 5px;">
+            <i class="fa fa-heart"></i>
+          </span>
+          re-Ported by
+          <a href="https://v-vincen.life/" target="_blank" rel="noopener">Live My Life</a>
+          |
+          <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=V-Vincen&repo=V-Vincen.github.io&type=star&count=true"></iframe>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a id="rocket" href="#top" class=""></a>
+
+<!-- jQuery -->
+<script type="text/javascript" src="/js/jquery.min.js"></script>
+<!-- <script type="text/javascript" src="/js/jquery.js"></script> -->
+<!-- <script type="text/javascript" src="//cdnjs.loli.net/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+
+<!-- Bootstrap Core JavaScript -->
+<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script type="text/javascript" src="/js/hux-blog.min.js"></script>
+
+<!-- catalog -->
+<script type="text/javascript" async="true" src="/js/catalog.js?v=1.0.0"></script>
+
+<!-- totop(rocket) -->
+<script type="text/javascript" async="true" src="/js/totop.js?v=1.0.0"></script>
+
+<!-- Busuanzi JavaScript -->
+<script type="text/javascript" async="true" src="/js/busuanzi.pure.mini.js"></script>
+
+
+  <!-- Scroll start -->
+  <script type="text/javascript" src="/js/scroll.js"></script>
+  <!-- Scroll end -->
+
+
+
+  <!-- ThemeColor start -->
+  <script type="text/javascript" src="/js/themecolor.js"></script>
+  <!-- ThemeColor end -->
+
+
+
+
+
+  <!-- viewer start -->
+  <!-- viewer start (Picture preview) -->
+  <script type="text/javascript" src="/js/viewer/viewer.min.js"></script>
+  <script type="text/javascript" src="/js/viewer/pic-viewer.js"></script>
+  <!-- viewer end -->
+
+
+<script>
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function (e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  // fastClick.js
+  async ("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+    var $nav = document.querySelector("nav");
+    if ($nav)
+      FastClick.attach($nav);
+    }
+  )
+</script>
+
+<!-- Because of the native support for backtick-style fenced code blocks right within the Markdown is landed in Github Pages, From V1.6, There is no need for Highlight.js, so Huxblog drops it officially. -
+https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0 - https://help.github.com/articles/creating-and-highlighting-code-blocks/ -->
+<!-- <script> async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){ hljs.initHighlightingOnLoad(); }) </script> <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet"> -->
+
+<!-- jquery.tagcloud.js -->
+<!-- <script> // only load tagcloud.js in tag.html if($('#tag_cloud').length !== 0){ async("http://endp.xyz/js/jquery.tagcloud.js",function(){ $.fn.tagcloud.defaults = { //size: {start: 1, end: 1, unit: 'em'}, color: {start:
+'#bbbbee', end: '#0085a1'}, }; $('#tag_cloud a').tagcloud(); }) } </script> -->
+
+
+	<!-- Search -->
+	
+	<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col-md-9 col-md-offset-1"> -->
+      <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1 local-search-content">
+
+        <div class="local-search-header clearfix">
+
+          <div class="local-search-input-wrapper">
+            <span class="search-icon">
+              <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
+            </span>
+            <input autocomplete="off" placeholder="Search..." type="text" id="local-search-input">
+          </div>
+        </div>
+        <div id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <script src="/js/ziploader.js"></script>
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+    // get search zip version
+    $.get('/searchVersion.json?t=' + (+new Date()), function (res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson() {
+      initLoad(['/search.flv'], {
+        loadOptions: {
+          success: function (obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function (e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions: {
+          'json': 'application/json'
+        }
+      })
+    }
+    // search function;
+    var searchFunc = function (search_id, content_id) {
+      'use strict';
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      // console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function () {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function (data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title
+              ? data.title.trim()
+              : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content
+              ? data.content.trim().replace(/<[^>]+>/g, "")
+              : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+
+            var date = data.date;
+            var dateTime = date.replace(/T/, " ").replace(/.000Z/, "");
+            var imgUrl = data.header_img;
+
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function (keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0,
+                  position = [],
+                  index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+            // show search results
+            if (isMatch) {
+              // sort index by position of keyword
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+              // merge hits into slices
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+                  // move to next position of hit
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {hits: hits, start: start, end: end, searchTextCount: searchTextCountInSlice};
+              }
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if (start < 0) {
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if (end > content.length) {
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+              // sort slices in content by search text's count and hits' count
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+              // select top N slices in content
+              var upperBound = parseInt('1');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+              // highlight title and content
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+              var resultItem = '';
+
+              // if (slicesOfTitle.length != 0) {   resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>"; } else {   resultItem += "<li><a target='_blank' href='" +
+              // articleUrl + "' class='search-result-title'>" + title + "</a>"; } slicesOfContent.forEach(function (slice) {   resultItem += "<a target='_blank' href='" + articleUrl + "'><p class=\"search-result\">" + highlightKeyword(content, slice) +
+              // "...</p></a>"; }); resultItem += "</li>";
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              } else {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + title + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              }
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<p class=\"search-result-content\">" + highlightKeyword(content, slice) + "...</p>";
+              });
+              resultItem += "</div><div class='search-result-right'><img class='media-image' src='" + imgUrl + "' width='64px' height='48px'></img></div></a>";
+
+              resultItems.push({item: resultItem, searchTextCount: searchTextCount, hitCount: hitCount, id: resultItems.length});
+            }
+          })
+        };
+
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<div class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</div>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+      // remove loading animation
+      $('body').css('overflow', '');
+      proceedsearch();
+    }
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function (e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function (e) {
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 && $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+
+    document.addEventListener('mouseup', (e) => {
+      var _con = document.querySelector(".local-search-content");
+      if (_con) {
+        if (!_con.contains(e.target)) {
+          onPopupClose();
+        }
+      }
+    });
+  </script>
+
+
+	
+
+	<!-- Image to hack wechat -->
+	<!-- <img src="http://endp.xyz/img/icon_wechat.png" width="0" height="0" /> -->
+	<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>
