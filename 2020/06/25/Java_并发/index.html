@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag (contains Google-Analytics、Baidu-Tongji)-->
+<head>
+  <!-- Google Analytics -->
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-xxxxxx-xx"></script>
+  <script type="text/javascript">
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-xxxxxx-xx');
+  </script>
+  
+
+  <!-- Baidu Tongji -->
+  
+  <script type="text/javascript">
+    // Originial
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+  
+
+  <!-- Baidu Push -->
+  
+  <script>
+    (function() {
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      } else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+  
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <meta name="google-site-verification" content="lxDfCplOZbIzjhG34NuQBgu2gdyRlAtMB4utP5AgEBc" />
+  <meta name="baidu-site-verification" content="PpzM9WxOJU" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="It&#39;s an IT blog..." />
+  <meta name="keyword" content="v-vincen,v-vincen,livemylife,IT  blog,Blog" />
+  <link rel="shortcut icon" href="/img/avatar/roguerabbit.jpg" />
+
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async="async" defer="defer" src="https://buttons.github.io/buttons.js"></script>
+  <!-- Bootstrap Core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.min.css" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/beantech.min.css" />
+
+  <!-- Pygments Highlight CSS -->
+  
+<link rel="stylesheet" href="../../../../css/highlight.css">
+<link rel="stylesheet" href="../../../../css/widget.css">
+<link rel="stylesheet" href="../../../../css/rocket.css">
+<link rel="stylesheet" href="../../../../css/signature.css">
+<link rel="stylesheet" href="../../../../css/catalog.css">
+<link rel="stylesheet" href="../../../../css/livemylife.css">
+
+
+  
+  <!-- wave start -->
+  <link rel="stylesheet" href="/css/wave.css" />
+  <!-- wave end -->
+  
+
+  
+  <!-- top start (article top hot config) -->
+  <link rel="stylesheet" href="/css/top.css" />
+  <!-- top end -->
+  
+
+  
+  <!-- ThemeColor start -->
+  <link rel="stylesheet" href="/css/scroll.css" />
+  <!-- ThemeColor end -->
+  
+
+  
+  <!-- viewer start (Picture preview) -->
+  <link rel="stylesheet" href="/css/viewer.min.css" />
+  <!-- viewer end -->
+  
+
+  
+  <!-- Search start -->
+  <link rel="stylesheet" href="/css/search.css" />
+  <!-- Search end -->
+  
+
+  
+  <!-- ThemeColor start -->
+  <link rel="stylesheet" href="/css/themecolor.css" />
+  <!-- ThemeColor end -->
+  
+
+  
+
+  
+  <!-- gitalk start -->
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css"> -->
+  <link rel="stylesheet" href="/css/gitalk.css" />
+  <!-- gitalk end -->
+  
+
+  <!-- Custom Fonts -->
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+  <!-- Hux change font-awesome CDN to qiniu -->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Hux Delete, sad but pending in China <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'> <link
+    href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/ css'> -->
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
+
+  <!-- ga & ba script hoook -->
+  <link rel="canonical" href="http://yoursite-url/2020/06/25/Java_并发/">
+  <title>
+    
+    Java Concurrency - either thin | or die
+    
+  </title>
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+
+<!-- hack iOS CSS :active style -->
+
+<body ontouchstart="" class="body--home">
+	<!-- ThemeColor -->
+	
+	<!-- ThemeColor -->
+<!-- <div class="toggle" onclick="document.body.classList.toggle('body--dark')">Switch Color</div> -->
+
+<div class="toggle" onclick="document.body.classList.toggle('body--dark')">
+  <i class="mdui-icon material-icons bright-mode"></i>
+  <i class="mdui-icon material-icons dark-mode"></i>
+</div>
+
+	
+
+	<!-- Gitter -->
+	
+	<!-- Gitter -->
+<!-- Docs:https://gitter.im/?utm_source=left-menu-logo -->
+<script>
+  ((window.gitter = {}).chat = {}).options = {
+    room: 'your-community/your-room'
+  };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+
+	
+
+	<!-- Navigation (contains search)-->
+	<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Your Title</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="/">Home</a>
+          </li>
+
+          
+
+          
+          
+
+          
+          <li>
+            <a href="/about/">About</a>
+          </li>
+          
+          
+
+          
+          <li>
+            <a href="/archive/">Archives</a>
+          </li>
+          
+          
+
+          
+          <li>
+            <a href="/categories/">Categories</a>
+          </li>
+          
+          
+
+          
+          <li>
+            <a href="/tags/">Tags</a>
+          </li>
+          
+          
+
+          
+          <li><a class="popup-trigger" title="Search"><span class="search-icon"></span>Search</a></li>
+          
+        </ul>
+      </div>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+<!-- progress -->
+<div id="progress">
+  <div class="line" style="width: 0%;"></div>
+</div>
+
+
+<script>
+  // Drop Bootstarp low-performance Navbar
+  // Use customize navbar with high-quality material design animation
+  // in high-perf jank-free CSS3 implementation
+  var $body = document.body;
+  var $toggle = document.querySelector('.navbar-toggle');
+  var $navbar = document.querySelector('#huxblog_navbar');
+  var $collapse = document.querySelector('.navbar-collapse');
+
+  $toggle.addEventListener('click', handleMagic)
+
+  function handleMagic(e) {
+    if ($navbar.className.indexOf('in') > 0) {
+      // CLOSE
+      $navbar.className = " ";
+      // wait until animation end.
+      setTimeout(function() {
+        // prevent frequently toggle
+        if ($navbar.className.indexOf('in') < 0) {
+          $collapse.style.height = "0px"
+        }
+      }, 400)
+    } else {
+      // OPEN
+      $collapse.style.height = "auto"
+      $navbar.className += " in";
+    }
+  }
+</script>
+
+
+	<!-- Post Header (contains intro-header、signature、wordcount、busuanzi、waveoverlay) -->
+	<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+
+  <style type="text/css">
+    header.intro-header {
+       /*post*/
+        background-image: url('');
+      
+    }
+
+    
+      #signature {/*signature*/
+        background-image: url('/img/signature/vincent-white.png');
+      }
+    
+  </style>
+
+
+
+
+
+<header class="intro-header">
+  <!-- Signature -->
+  <div id="signature">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          
+          <div class="post-heading">
+            <div class="tags">
+              
+            </div>
+            <h1>Java Concurrency</h1>
+            <h2 class="subheading"></h2>
+            <span class="meta">
+              Posted by Your Name on
+              2020-06-25
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">14</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">4k</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- 不蒜子统计 start -->
+            <span class="meta">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            <!-- WordCount end -->
+            
+
+
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- waveoverlay start -->
+  <div class="preview-overlay">
+    <svg class="preview-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+      </defs>
+      <g class="preview-parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill=var(--gentle-wave1)></use>
+        <use xlink:href="#gentle-wave" x="48" y="3" fill=var(--gentle-wave2)></use>
+        <use xlink:href="#gentle-wave" x="48" y="5" fill=var(--gentle-wave3)></use>
+        <use xlink:href="#gentle-wave" x="48" y="7" fill=var(--gentle-wave)></use>
+      </g>
+    </svg>
+  </div>
+  <!-- waveoverlay end -->
+  
+
+</header>
+
+
+
+	<!-- Main Content (Post contains
+	Pager、
+	tip、
+	socialshare、
+	gitalk、gitment、disqus-comment、
+	Catalog、
+	Sidebar、
+	Featured-Tags、
+	Friends Blog、
+	anchorjs、
+	) -->
+	<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <h2 id="Java-Concurrency"><a href="#Java-Concurrency" class="headerlink" title="Java Concurrency"></a><a href="https://docs.oracle.com/javase/tutorial/essential/concurrency/index.html" target="_blank" rel="noopener">Java Concurrency</a></h2><hr>
+<h3 id="Thread-Objects"><a href="#Thread-Objects" class="headerlink" title="Thread Objects"></a>Thread Objects</h3><p>每个线程都对应了一个Thread实例，有两种使用Thread对象创建并发应用的方法：</p>
+<ul>
+<li>应用需要初始化非同步工作时实例化Thread，直接创建和管理线程</li>
+<li>把应用工作传给executer，从应用中抽象出线程管理</li>
+</ul>
+<h4 id="1-定义与启动进程"><a href="#1-定义与启动进程" class="headerlink" title="1. 定义与启动进程"></a>1. 定义与启动进程</h4><ul>
+<li><p>实现<code>Runnable</code>接口,<code>Runnable</code>接口定义了run方法,run方法内含线程应该执行的代码.Runnable对象会被传入到Thread的构造器中:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloRunnable</span> <span class="keyword">implements</span> <span class="title">Runnable</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Hello from a thread"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</span><br><span class="line">        (<span class="keyword">new</span> Thread(<span class="keyword">new</span> HelloRunnable())).start();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>继承<code>Thread</code>,<code>Thread</code>实现了Runnable接口,其run方法什么也不做;这种定义方式不常用,因为定于的类必须是Thread的后代.</p>
+</li>
+</ul>
+<p>第一种方法把Runnable与执行它的Thread对象分隔开,更加灵活,更适用于高级的线程管理API</p>
+<h4 id="2-暂停执行"><a href="#2-暂停执行" class="headerlink" title="2. 暂停执行"></a>2. 暂停执行</h4><p><code>Thread.sleep</code>会使得当前的线程停止运行一段时间,可以用来出让CPU给其他线程,也可以用于等待其他线程的运行.等待的时间取决与OS底层实现,不能用于精确计时.</p>
+<h4 id="3-Interrupt"><a href="#3-Interrupt" class="headerlink" title="3. Interrupt"></a>3. Interrupt</h4><p>​        中断是通知线程应该暂停当前的工作并转向其他工作的一个信号.线程如何回应中断信号由程序员决定.线程通过激发另一个线程对象的Interrupt方法来发送中断信号.被中断的线程应当支持中断.</p>
+<p>​        许多抛出<code>InterruptedExcption</code>方法,如<code>sleep</code>,接收到中断时会立刻取消当前操作并返回.</p>
+<p>​        如何支持中断:</p>
+<ol>
+<li><p>如果线程频繁使用到会抛出<code>InterruptException</code>的方法,接收到中断后,线程一般会选择直接返回;</p>
+</li>
+<li><p>如果线程没有使用到会抛出<code>InterruptException</code>的方法,为了支持中断,线程需要周期性地调用<code>Thread.interuppted</code>方法,来查看其是否接收到了中断,接收到中断后,线程可以选择返回或者更一般地会选择抛出中断.</p>
+</li>
+</ol>
+<p>​        中断机制通过使用一个内部标志(<em>interrupt status</em>)来实现.使用Thread.interrupt来修改标志,当线程使用静态方法<code>Thread.interrupted</code>方法检查是否有中断时,会清除标志位.可以使用非静态方法<code>isInterrupted</code>来查看另外一个进程的内部标志.</p>
+<p>​        通常抛出<code>InterruptedException</code>然后退出的方法会立即清除标志位.</p>
+<h4 id="4-Joins"><a href="#4-Joins" class="headerlink" title="4. Joins"></a>4. Joins</h4><p>​        join方法用于等待另一个线程的完成.</p>
+<p>​        与sleep相同, joins也依赖于底层OS的实现, 并不会精确地等待; join方法接收到中断后, 会立刻抛出<code>InterruptedException</code>并退出.</p>
+<hr>
+<h3 id="Synchronization"><a href="#Synchronization" class="headerlink" title="Synchronization"></a>Synchronization</h3><h4 id="1-Thread-Interference"><a href="#1-Thread-Interference" class="headerlink" title="1. Thread Interference"></a>1. Thread Interference</h4><p>​        线程干涉发生与运行于不同线程的两个操作的操作对象为为同一个数据的时候。由于操作通常包含很多步骤，对同一对象的同时进行两个操作会导致步骤之间的重叠。干涉所带来的错误是很难发现与修改的。</p>
+<p>​        <code>c++</code>操作可以被分成三个步骤：</p>
+<ol>
+<li><p>获取<code>c</code>的当前值</p>
+</li>
+<li><p>对获取的值加一</p>
+</li>
+<li><p>写回值到<code>c</code>中</p>
+</li>
+</ol>
+<h4 id="2-Memory-Consistency-Errors"><a href="#2-Memory-Consistency-Errors" class="headerlink" title="2. Memory Consistency Errors"></a>2. Memory Consistency Errors</h4><p>​        不同的线程眼中的相同的数据时序上不一致的现象。比如A线程先执行，B线程后执行，理应A的修改在前，B的在后，实际上却不一定。</p>
+<p>​        避免这个问题的关键是理解<code>happens-before</code>关系，确保内存的写入行为对他者是可见的。<code>Thread.start</code>的所有行为都发生新线程行为之前，原有线程在此之前的动作对新线程可见，<code>Thread.join</code>后的所有行为都发生在其返回之后，线程内所发生的动作对使用<code>join</code>的线程可见。同步是创建这种关系的一种方式。</p>
+<p>​        </p>
+<h4 id="3-同步方法"><a href="#3-同步方法" class="headerlink" title="3. 同步方法"></a>3. 同步方法</h4><p>Java通过同步方法和同步声明来实现同步。</p>
+<p>关键字<code>synchronized</code>不能修饰构造器，因为只有创建这个对象的线程才有权限在构造时使用构造器。在对象构造好之前不能把对象的引用共享！！！（比如：把还没构造好的对象直接放在了一个共享容器中）</p>
+<p>如果对象被多个线程共享，该对象的所有对数据的<strong><em><code>读</code></em></strong>和写都应当通过同步方法来实现（<code>final</code>修饰的常量不用）。</p>
+<p>这种同步策略比较简单，但<code>liveness</code>可能会出现问题。</p>
+<h4 id="4-Intrinsic-Locks"><a href="#4-Intrinsic-Locks" class="headerlink" title="4. Intrinsic Locks"></a>4. Intrinsic Locks</h4><p>同步是基于锁实现的，API手册中，锁这个实体又被称为<code>monitor</code>。</p>
+<p>每个对象都有一个内部锁，当一个线程释放锁后，与随后获取的锁的线程之间就构成了<code>happens-before</code>的关系</p>
+<p>当线程调用同步方法时，便自动获取了这个对象的锁，并在方法返回时释放锁。静态方法与类相关而与对象无关，静态的同步方法的锁是与该类相关的<code>Class object</code>的。</p>
+<p><code>Synchronized statements</code>是创建同步代码的另一种方式。<code>Synchronized statements</code>必须声明提供内置的锁的对象是谁。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">synchronized</span>(<span class="keyword">this</span>) &#123;<span class="comment">//这两个变量彼此相关，需要始终保持一致</span></span><br><span class="line">        lastName = name;</span><br><span class="line">        nameCount++;</span><br><span class="line">    &#125;</span><br><span class="line">    nameList.add(name);<span class="comment">//调用的其他对象的方法不放在同步代码中</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>出于<code>liveness</code>的考虑，同步代码中一般不会调用其他的对象的方法。</p>
+<p>如果上面的代码是对方法进行同步，就要单独创建一个方法来执行<code>nameList.add</code>了。<br><code>Synchronized statements</code>实现的同步的粒度更小。</p>
+<p>锁是可重入，即线程可以获得已经获得锁，比如线程调用了一个包含有同步代码的方法，同步代码的锁和线程已获得锁是相同的，这种情况是允许的。如果不可以重入，可能会导致死锁。</p>
+<h4 id="5-Atomic-Access"><a href="#5-Atomic-Access" class="headerlink" title="5. Atomic Access"></a>5. Atomic Access</h4><p>原子操作只有还没有执行与执行完毕两种状态。</p>
+<ol>
+<li>大多数基本变量的引用的读写都是原子操作（除了double和long）</li>
+<li>所有已声明<code>volatile</code>的变量的读写都是原子操作</li>
+</ol>
+<p>原子操作不必担心线程之间的干涉问题，但需要考虑内存一致问题仍有可能发生。使用原子变量对程序员来讲需要考虑的问题更多。</p>
+<hr>
+<h3 id="Liveness"><a href="#Liveness" class="headerlink" title="Liveness"></a>Liveness</h3><p>应用能够并发及时地能力称为<code>Liveness</code>。</p>
+<h4 id="1-Deadlock"><a href="#1-Deadlock" class="headerlink" title="1. Deadlock"></a>1. Deadlock</h4><h4 id="2-饥饿和活锁"><a href="#2-饥饿和活锁" class="headerlink" title="2. 饥饿和活锁"></a>2. 饥饿和活锁</h4><p>饥饿是指线程无法获得共享资源进而无法继续推进代码执行的情况。</p>
+<p>活锁是指任务没有被阻塞，由于某些条件没有满足，导致一直重复 尝试—失败—尝试—失败的过程。 线程之间彼此响应而做出动作，然后彼此根据对方发出的动作一直不停地响应和发生动作，就会发生活锁。</p>
+<hr>
+<h3 id="Guarded-Blcoks"><a href="#Guarded-Blcoks" class="headerlink" title="Guarded Blcoks"></a>Guarded Blcoks</h3><p>线程之间需要协调它们之间的行动，最常用的方法是使用<code>guarded block</code>，<code>block</code>需要满足特定的条件后，才会继续推进代码，否则就会一直等待时间的发生。</p>
+<p>实现上，可以让线程忙等循环判断条件是否满足，也可以把线程挂起等待其他线程唤醒，然后再判断条件是否满足。</p>
+<p>可以使用<code>object.wait</code>来释放锁并挂起，前提是当前线程要首先拥有锁。可以把<code>wait</code>放进同步方法中，这样激活他的线程就必须首先拥有锁。</p>
+<p>使用<code>Object.notifyAll</code>可以通知所有等待该对象锁的线程有时间已经发生，<code>Object.notify</code>则只会通知其中的某个线程。</p>
+<hr>
+<h3 id="Immutable"><a href="#Immutable" class="headerlink" title="Immutable"></a>Immutable</h3><p>如果一个对象构建后，其状态就不能再改变，则称这个对象为<code>immutable</code>。</p>
+<p>使用<code>immutable</code>对象在更新时要重新创捷一个对象，但不用考虑同步这样的问题，垃圾处理机制也会处理内存方面的问题。</p>
+<p>Immutable对象中的变量的状态不能够改变，变量包括基本变量，以及使用到的别的mutable对象。</p>
+<p>据此，可以使用如下策略创建Immutable类：</p>
+<ol>
+<li>不提供setter方法</li>
+<li>所有的内部变量（field or instance filed）均设置为final和private</li>
+<li>不允许子类重载方法。最简单的方式是把这个类设置为<code>final</code>，更高级的方法是把构造器设置为<code>private</code>，然后以工厂模式来创建实例。（怎么实现工厂模式？？？？？？   就是通过一个方法使得对象在出场就已经完成一部分初始化了？？？？使用类的静态方法）</li>
+<li>如果内部变量中包含可变对象的引用，不可以提供改变这些可变对象的方法；对这些对象进行复制，并存储这些复制品的引用；方法返回的引用使用副本。</li>
+</ol>
+<hr>
+<h3 id="高级并发对象"><a href="#高级并发对象" class="headerlink" title="高级并发对象"></a>高级并发对象</h3><h4 id="1-Lock-Objects"><a href="#1-Lock-Objects" class="headerlink" title="1. Lock Objects"></a>1. Lock Objects</h4><p><code>Lock</code>是java.util.concurrrent.locks`最基本的接口。</p>
+<p><code>Lock</code>对象与同步代码中所用到的隐式锁一样，同一时间，只能有一个线程占有某一<code>Lock</code>对象。<code>Lock</code>对象通过与其关联的<code>Condition</code>对象也支持<code>wait/notify</code>机制。</p>
+<p><code>Lock</code>对象相比于隐式锁最大的优势是支持从获取锁的尝试中退出。如果无法立即或者在到期前获得锁，可以使用<code>unlock</code>方法退出 <code>trylock</code>。如果其他线程发出中断是还没有获得到锁，<code>lockInterruptibly</code>方法会选择退出。</p>
+<h4 id="2-Executors"><a href="#2-Executors" class="headerlink" title="2. Executors"></a>2. Executors</h4><p>小型应用中，线程执行的任务（Runnable对象）和线程本身（Thread）可以紧密相连。大型应用中，一般会把线程的创建与管理与其他应用部分代码分开。把这些功能封装起来的对象叫作<em><code>executors</code></em>。</p>
+<ol>
+<li><p>Executor Interfaces: 有三种类型的<code>executor</code>对象</p>
+<ol>
+<li><code>Executor</code>，支持启动新任务的接口</li>
+<li><code>ExecutorService</code>，<code>Executor</code>的子接口，添加了管理任务以及<code>Executor</code>的生命周期的特性</li>
+<li><code>ScheduledExecutorService</code>，<code>ExecutorService</code>的子接口，支持延时(and/or)周期性地执行任务</li>
+</ol>
+<p>一般，声明指向这些<code>executor</code>对象的变量为这三种接口之一</p>
+<p><code>Executor</code>接口只提供<code>execute</code>这一个方法，相当于<code>Thread</code>的<code>start</code>方法，即:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">new</span> Thread(r)).start();	<span class="comment">//r为Runnable对象</span></span><br><span class="line"><span class="comment">//与</span></span><br><span class="line">e.execute(); 				<span class="comment">//e为Executor对象</span></span><br></pre></td></tr></table></figure>
+
+<p>取决于<code>Executor</code>的实现方式，<code>execute</code>方法可能会创建一个新的线程并立刻执行，但更有可能会直接使用一个已经存在的工作线程(<code>worker thread</code>)来运行<code>r</code>，或者把<code>r</code>放在队列中等待工作线程可以进行工作。</p>
+<p><code>ExecutorService</code>接口添加了一个多功能的<code>submit</code>方法，<code>submit</code>可以接收一个<code>Runnable</code>对象或者<code>Callable</code>对象。<code>submit</code>方法会返回一个<code>Future</code>对象，可以用这个对象来获取<code>Callable</code>的返回值，也可以用它来管理<code>Callable</code>以及<code>Runnable</code>任务的状态。除此以外，<code>ExecutorService</code>还支持提交<code>Callable</code>对象的集合，还提供了多种方法用于管理<code>executor</code>的终止。实现快速终止，需要任务合理地处理中断。</p>
+<p><code>ScheduledExecutorService</code>又给<code>ExecuteService</code>添加了一个<code>schedule</code>方法，可以用于延时执行<code>Callable</code>和<code>Runnable</code>任务。除此以外，该接口还定义了<code>scheduleAtFixedRate</code>以及<code>scheduleWithFixedDelay</code>用于周期性地执行特定的任务。</p>
+</li>
+<li><p>Thread Pools</p>
+<p>大多数<code>executor</code>的实现都会使用到线程池，其中就包含了<code>worker threads</code>，这种线程独立于其执行的<code>Runnable</code>和<code>Callable</code>任务，且通常会被用于执行多任务。</p>
+<p>最常用的线程池就是<code>fixed thread pool</code>，其运行的线程数是指定的，如果有线程中途中断，会立刻被新线程取代。任务通过内部队列提交到线程池中。</p>
+<p>有限的的线程可能无法迅速响应满足用户高并发的需求，但不至于因为创建过多的线程响应用户需求而立刻陷入到崩溃状态。</p>
+<p>一个创建使用线程池的<code>executor</code>的简单方法是使用<code>java.util.concurrent.Executors</code>里的<code>newFixedThreadPool</code>工厂方法。该类还提供了创建其他种类线程池的工厂方法，如果没有合适的方法，可以选择自己构造<code>java.util.concurrent.ThreadPoolExecutor</code>或<code>java.util.concurrent.ScheduledThreadPoolExecutor</code>实例。</p>
+</li>
+<li><p>Fork/Join</p>
+<p><code>fork/join</code>架构实现了<code>ExecutorService</code>接口，可以充分发挥多处理器的优势，适用于可以迭代拆分的任务。</p>
+<p><code>fork/join</code>架构同样选择把任务分发给线程池里的工作线程，不同之处在于，它还是使用了<code>work-stealing</code>算法，工作线程在完成完自己的任务后会从其他忙碌线程中偷过来一部分。</p>
+<p>架构的核心是<code>ForkJoinPool</code>类，其继承了<code>AbstractExecuteService</code>类。实现了<code>worl-stealing</code>算法，可以执行<code>ForkJoinTask</code>进程。</p>
+<p>使用时，先用迭代方式写出工作代码，然后把代码封装到一个<code>ForkJoinTask</code>的子类中去，封装后使用一个对象来代表工作，然后把这个对象传入到<code>ForkJoinPool</code>实例的<code>invoke()</code>中去。</p>
+</li>
+</ol>
+<h4 id="3-Concurrent-Collections"><a href="#3-Concurrent-Collections" class="headerlink" title="3. Concurrent Collections"></a>3. Concurrent Collections</h4><p><code>java.util.concurrent</code>含有一些集合可以用于补充Java的集合框架。这些集合可以按照集合接口分成以下几类：</p>
+<ol>
+<li><code>Blocking Queue</code>定义了一个先进先出的数据结构，当用户尝试向满集合中添加或从空集合中获取数据时，该数据结构会进行阻塞或者times out</li>
+<li><code>ConcurrentMap</code>是<code>java.util.Map</code>的子接口，定义了一些原子操作。只有key存在时才会执行移除和取代<code>key-value pair</code> 操作，只有key不存在时，才会添加<code>key-value pair</code>。标准通用的<code>ConcurrentMap</code>的实现是<code>ConcurrentHashMap</code>，相当于<code>HashMap</code>的并发版。</li>
+<li><code>ConcurrentNavigableMap</code>是<code>ConcurrentMap</code>的子接口，其支持模糊匹配，对应的标准通用实现是<code>ConcurrentSkipListMap</code>，相当于<code>Tree Map</code>的并发版。</li>
+</ol>
+<p>以上这些集合避免了<code>Memory Consistency Errors</code>的发生，它们在添加对象到集合的操作和此后访问或移除对象的操作之间建立起了<code>happens before</code>的关系。</p>
+<h4 id="4-Atomic-Variables"><a href="#4-Atomic-Variables" class="headerlink" title="4. Atomic Variables"></a>4. Atomic Variables</h4><p><code>java.util.concurrent.atomic</code>定义一些支持对变量执行原子操作的类。这些类都拥有<code>get</code>和<code>set</code>方法，类似于<code>vlatile</code>变量的读和写。<code>set</code>方法与随后发生的所有的<code>get</code>方法之间都存在<code>happens before</code>的关系。</p>
+<h4 id="5-Concurrent-Random-Numbers"><a href="#5-Concurrent-Random-Numbers" class="headerlink" title="5. Concurrent Random Numbers"></a>5. Concurrent Random Numbers</h4><p><code>java.util.concurrent</code>内有一个<code>ThreadLocalRandom</code>类，可用于多线程或多<code>ForkJoinTask</code>内来生成随机数。相比于<code>Math.random()</code>，使用它所产生的竞争更少，性能也就更好。</p>
+<p>使用时直接<code>ThreadLocalRandom.current()</code>外加指定方法，就可以了。</p>
+<p>函数一：计算模糊值compute directly</p>
+<p>函数二：完成指定的区域的模糊 compute</p>
+<p>函数三：执行模糊逻辑   bufferedImage-&gt;array-&gt;compute-&gt;bufferedImage-&gt;image</p>
+<p>我理解的<code>Memory Consitency Errors</code>是   执行某条语句之前，线程可以知道有哪些指令是在其之前已经完成了的，都知道变量的真实值</p>
+<p><code>happens-before</code>关系，重在可见性，而不是执行的顺序性。后发生事情能够看见之前已经发生的事情，它们之间才算有前后关系。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> (!empty) &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        wait();</span><br><span class="line">    &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>应该就是</p>
+<p><strong>Exercise:</strong> Modify the producer-consumer example in <a href="https://docs.oracle.com/javase/tutorial/essential/concurrency/guardmeth.html" target="_blank" rel="noopener">Guarded Blocks</a> to use a standard library class instead of the <code>Drop</code> class.</p>
+<p><strong>Solution:</strong> The <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/BlockingQueue.html" target="_blank" rel="noopener"><code>java.util.concurrent.BlockingQueue</code></a> interface defines a <code>get</code> method that blocks if the queue is empty, and a <code>put</code> methods that blocks if the queue is full. These are effectively the same operations defined by <code>Drop</code> — except that <code>Drop</code> is not a queue! However, there’s another way of looking at Drop: it’s a queue with a capacity of zero. Since there’s no room in the queue for <em>any</em> elements, every <code>get</code> blocks until the corresponding <code>take</code> and every <code>take</code> blocks until the corresponding <code>get</code>. There is an implementation of <code>BlockingQueue</code> with precisely this behavior: <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/SynchronousQueue.html" target="_blank" rel="noopener"><code>java.util.concurrent.SynchronousQueue</code></a>.</p>
+<p>为啥Drop不是size为1的queue？</p>
+<p><code>BlockingQueue</code> is almost a drop-in replacement for <code>Drop</code>. The main problem in <a href="https://docs.oracle.com/javase/tutorial/essential/concurrency/QandE/Producer.java" target="_blank" rel="noopener"><code>Producer</code></a> is that with <code>BlockingQueue</code>, the <code>put</code> and <code>get</code> methods throw <code>InterruptedException</code>. This means that the existing <code>try</code> must be moved up a level:</p>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          
+          <li class="next">
+            <a href="/2020/04/17/Hexo-Theme-LiveMyLife/" data-toggle="tooltip" data-placement="top" title="Hexo-Theme-LiveMyLife">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+        <!-- tip start -->
+        <div class="tip">
+          <p>
+            If you like this blog or find it useful for you, you are welcome to comment on it. You are also welcome to share this blog, so that more people can participate in it. If the images used in the blog infringe your copyright, please contact the author to delete them. Thank you !
+          </p>
+        </div>
+        <!-- tip end -->
+        
+
+        
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=Java Concurrency&body=Hi,I found this website and thought you might like it http://yoursite-url/2020/06/25/Java_并发/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+        <!-- Sharing End -->
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+<!-- gitalk start -->
+<!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
+
+<div id="gitalk-container"></div>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.js"></script> -->
+<script src="/js/comment/gitalk.js"></script>
+
+<script>
+  var gitalk = new Gitalk({
+    clientID: '',
+    clientSecret: '',
+    repo: '',
+    owner: '',
+    admin: '',
+    id: 'Thu Jun 25 2020 10:11:00 GMT+0800', // Ensure uniqueness and length less than 50
+    distractionFreeMode: false, // Facebook-like distraction free mode
+    perPage: 10 ,
+    pagerDirection: 'last',
+    createIssueManually: false ,
+    language: 'en'
+  });
+  gitalk.render('gitalk-container');
+
+  var gtFolded = () => {
+    setTimeout(function() {
+      let markdownBody = document.getElementsByClassName("markdown-body");
+      let list = Array.from(markdownBody);
+      list.forEach(item => {
+        if (item.clientHeight > 250) {
+          item.classList.add('gt-comment-body-folded');
+          item.style.maxHeight = '250px';
+          item.title = 'Click to Expand';
+          item.onclick = function() {
+            item.classList.remove('gt-comment-body-folded');
+            item.style.maxHeight = '';
+            item.title = '';
+            item.onclick = null;
+          };
+        }
+      })
+    }, 800);
+  }
+</script>
+
+<!-- gitalk end -->
+
+
+
+<!-- 2. gitment comment -->
+
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">FEATURED TAGS</a>
+          </h5>
+          <div class="tags">
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
+        <hr>
+        <h5>FRIENDS</h5>
+        <ul class="list-inline">
+
+          
+          <li>
+            <a href="https://v-vincen.life/" target="_blank">V_Vincen</a>
+          </li>
+          
+          <li>
+            <a href="http://beantech.org" target="_blank">Bean Tech</a>
+          </li>
+          
+          <li>
+            <a href="http://huangxuan.me" target="_blank">Hux Blog</a>
+          </li>
+          
+          <li>
+            <a href="https://hexo.io/" target="_blank">Hexo</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
+
+
+	<!-- Footer (contains ThemeColor、viewer) -->
+	<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center">
+          
+
+          
+            <li>
+              <a target="_blank" href="https://github.com/V-Vincen">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+            <li>
+              <a target="_blank" href="https://twitter.com/V_Vincen_">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+            <li>
+              <a target="_blank" href="https://www.instagram.com/v_vincen_">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+
+          
+
+          
+
+          
+            <li>
+              <a target="_blank" href="http://weibo.com/WVincen">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+        </ul>
+        <p class="copyright text-muted">
+          Copyright &copy;
+          Your Name
+          2020
+          <br>
+          Theme by
+          <a href="http://beantech.org" target="_blank" rel="noopener">BeanTech</a>
+          <span style="display: inline-block; margin: 0 5px;">
+            <i class="fa fa-heart"></i>
+          </span>
+          re-Ported by
+          <a href="https://v-vincen.life/" target="_blank" rel="noopener">Live My Life</a>
+          |
+          <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=V-Vincen&repo=V-Vincen.github.io&type=star&count=true"></iframe>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a id="rocket" href="#top" class=""></a>
+
+<!-- jQuery -->
+<script type="text/javascript" src="/js/jquery.min.js"></script>
+<!-- <script type="text/javascript" src="/js/jquery.js"></script> -->
+<!-- <script type="text/javascript" src="//cdnjs.loli.net/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+
+<!-- Bootstrap Core JavaScript -->
+<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script type="text/javascript" src="/js/hux-blog.min.js"></script>
+
+<!-- catalog -->
+<script type="text/javascript" async="true" src="/js/catalog.js?v=1.0.0"></script>
+
+<!-- totop(rocket) -->
+<script type="text/javascript" async="true" src="/js/totop.js?v=1.0.0"></script>
+
+<!-- Busuanzi JavaScript -->
+<script type="text/javascript" async="true" src="/js/busuanzi.pure.mini.js"></script>
+
+
+  <!-- Scroll start -->
+  <script type="text/javascript" src="/js/scroll.js"></script>
+  <!-- Scroll end -->
+
+
+
+  <!-- ThemeColor start -->
+  <script type="text/javascript" src="/js/themecolor.js"></script>
+  <!-- ThemeColor end -->
+
+
+
+
+
+  <!-- viewer start -->
+  <!-- viewer start (Picture preview) -->
+  <script type="text/javascript" src="/js/viewer/viewer.min.js"></script>
+  <script type="text/javascript" src="/js/viewer/pic-viewer.js"></script>
+  <!-- viewer end -->
+
+
+<script>
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function (e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  // fastClick.js
+  async ("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+    var $nav = document.querySelector("nav");
+    if ($nav)
+      FastClick.attach($nav);
+    }
+  )
+</script>
+
+<!-- Because of the native support for backtick-style fenced code blocks right within the Markdown is landed in Github Pages, From V1.6, There is no need for Highlight.js, so Huxblog drops it officially. -
+https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0 - https://help.github.com/articles/creating-and-highlighting-code-blocks/ -->
+<!-- <script> async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){ hljs.initHighlightingOnLoad(); }) </script> <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet"> -->
+
+<!-- jquery.tagcloud.js -->
+<!-- <script> // only load tagcloud.js in tag.html if($('#tag_cloud').length !== 0){ async("http://yoursite-url/js/jquery.tagcloud.js",function(){ $.fn.tagcloud.defaults = { //size: {start: 1, end: 1, unit: 'em'}, color: {start:
+'#bbbbee', end: '#0085a1'}, }; $('#tag_cloud a').tagcloud(); }) } </script> -->
+
+
+	<!-- Search -->
+	
+	<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col-md-9 col-md-offset-1"> -->
+      <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1 local-search-content">
+
+        <div class="local-search-header clearfix">
+
+          <div class="local-search-input-wrapper">
+            <span class="search-icon">
+              <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
+            </span>
+            <input autocomplete="off" placeholder="Search..." type="text" id="local-search-input">
+          </div>
+        </div>
+        <div id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <script src="/js/ziploader.js"></script>
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+    // get search zip version
+    $.get('/searchVersion.json?t=' + (+new Date()), function (res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson() {
+      initLoad(['/search.flv'], {
+        loadOptions: {
+          success: function (obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function (e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions: {
+          'json': 'application/json'
+        }
+      })
+    }
+    // search function;
+    var searchFunc = function (search_id, content_id) {
+      'use strict';
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      // console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function () {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function (data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title
+              ? data.title.trim()
+              : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content
+              ? data.content.trim().replace(/<[^>]+>/g, "")
+              : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+
+            var date = data.date;
+            var dateTime = date.replace(/T/, " ").replace(/.000Z/, "");
+            var imgUrl = data.header_img;
+
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function (keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0,
+                  position = [],
+                  index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+            // show search results
+            if (isMatch) {
+              // sort index by position of keyword
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+              // merge hits into slices
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+                  // move to next position of hit
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {hits: hits, start: start, end: end, searchTextCount: searchTextCountInSlice};
+              }
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if (start < 0) {
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if (end > content.length) {
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+              // sort slices in content by search text's count and hits' count
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+              // select top N slices in content
+              var upperBound = parseInt('1');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+              // highlight title and content
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+              var resultItem = '';
+
+              // if (slicesOfTitle.length != 0) {   resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>"; } else {   resultItem += "<li><a target='_blank' href='" +
+              // articleUrl + "' class='search-result-title'>" + title + "</a>"; } slicesOfContent.forEach(function (slice) {   resultItem += "<a target='_blank' href='" + articleUrl + "'><p class=\"search-result\">" + highlightKeyword(content, slice) +
+              // "...</p></a>"; }); resultItem += "</li>";
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              } else {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + title + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              }
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<p class=\"search-result-content\">" + highlightKeyword(content, slice) + "...</p>";
+              });
+              resultItem += "</div><div class='search-result-right'><img class='media-image' src='" + imgUrl + "' width='64px' height='48px'></img></div></a>";
+
+              resultItems.push({item: resultItem, searchTextCount: searchTextCount, hitCount: hitCount, id: resultItems.length});
+            }
+          })
+        };
+
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<div class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</div>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+      // remove loading animation
+      $('body').css('overflow', '');
+      proceedsearch();
+    }
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function (e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function (e) {
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 && $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+
+    document.addEventListener('mouseup', (e) => {
+      var _con = document.querySelector(".local-search-content");
+      if (_con) {
+        if (!_con.contains(e.target)) {
+          onPopupClose();
+        }
+      }
+    });
+  </script>
+
+
+	
+
+	<!-- Image to hack wechat -->
+	<!-- <img src="http://yoursite-url/img/icon_wechat.png" width="0" height="0" /> -->
+	<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>
