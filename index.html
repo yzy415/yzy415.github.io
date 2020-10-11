@@ -422,28 +422,36 @@ This LiveMyLife theme created by Vincent modified from the original Porter YenYu
   
 
 
-  <a href="/2020/10/09/wsl/">
+  <a href="/2020/10/11/wsl2访问宿主机代理/">
     <h2 class="post-title">
-      WSL相关
+      wsl2访问宿主机代理
     </h2>
     <h3 class="post-subtitle">
-      
+      利用宿主机代理加速wsl2！！！
     </h3>
     <div class="post-content-preview">
-      网络问题wsl2访问pc本地的端口：
-1cat /etc/resolv.conf
+      wsl2访问宿主机代理：
+参考了知乎大佬的文章，感谢前人爬坑！
 
-wsl2访问代理：
-12
+注意点
+wsl2与宿主机组成了局域网，wsl2只能通过宿主机的ip地址来访问宿主机
 
-使用culr发送请求
-12curl localhost:8080/demo/add -d name=Second -d email=flip@126.com     //发送name和email参数给主机curl '172.30.64.1:8080/demo/all'   //获取......
+宿主机的ip是会变动的
+
+windows防火墙默认阻止入站网络请求
+
+
+操作步骤
+允许wsl2的入站请求
+
+允许wsl2的入站请求
+1New-NetFirewallRule -DisplayName "WSL" -Direction Inbo......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by Yan on
-    2020-10-09
+    2020-10-11
   </p>
   <div class="tags">
     
@@ -540,35 +548,32 @@ CMD+......
   
 
 
-  <a href="/2020/08/30/web/">
+  <a href="/2020/10/09/wsl/">
     <h2 class="post-title">
-      前端基础html和css
+      WSL相关
     </h2>
     <h3 class="post-subtitle">
       
     </h3>
     <div class="post-content-preview">
-      前端基础HTML缩写
-anchor &lt;a&gt;
-unorder list &lt;ul&gt;
-list item &lt;li&gt;
-order list &lt;ol&gt;
-emphasis &lt;em&gt;
-strong strong importance
-italic &lt;i&gt;
-bold &lt;b&gt;
-underline &lt;u&gt;
-langu......
+      网络问题wsl2访问pc本地的端口：
+1cat /etc/resolv.conf
+
+wsl2访问代理：
+12
+
+使用culr发送请求
+12curl localhost:8080/demo/add -d name=Second -d email=flip@126.com     //发送name和email参数给主机curl '172.30.64.1:8080/demo/all'   //获取......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by Yan on
-    2020-08-30
+    2020-10-09
   </p>
   <div class="tags">
     
-    <a href="/tags/#front-end" title="front-end">front-end</a>
+    <a href="/tags/#wsl" title="wsl">wsl</a>
     
   </div>
   
@@ -607,6 +612,51 @@ Inversion of Control(IoC)又叫作Dependency injection指的是对象只通过�
   <div class="tags">
     
     <a href="/tags/#java" title="java">java</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+
+  <a href="/2020/08/30/web/">
+    <h2 class="post-title">
+      前端基础html和css
+    </h2>
+    <h3 class="post-subtitle">
+      
+    </h3>
+    <div class="post-content-preview">
+      前端基础HTML缩写
+anchor &lt;a&gt;
+unorder list &lt;ul&gt;
+list item &lt;li&gt;
+order list &lt;ol&gt;
+emphasis &lt;em&gt;
+strong strong importance
+italic &lt;i&gt;
+bold &lt;b&gt;
+underline &lt;u&gt;
+langu......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Yan on
+    2020-08-30
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#front-end" title="front-end">front-end</a>
     
   </div>
   
@@ -744,46 +794,6 @@ SS的工作流程
 </div>
 <hr>
 
-<div class="post-preview">
-
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-
-  <a href="/2020/06/25/2020-06-25-FileSystem_Hierachyg_Standard/">
-    <h2 class="post-title">
-      文件系统常用目录
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      官方的Linux的文件系统目录可以从这里查看
-常用的目录：
-
-/user/src：存放源代码
-/usr/src/drivers：存放驱动源码，其内部按照设备类型继续分类
-/dev：存放device node文件，用于访问设备
-/lib/modules/   version/kernel/下存放编译好的module，其下的目录直接对了源码树里的条目
-/lib/modules/$Kernel_v......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Yan on
-    2020-06-25
-  </p>
-  <div class="tags">
-    
-  </div>
-  
-
-</div>
-<hr>
-
 
 
   <!-- Pager -->
@@ -850,7 +860,7 @@ SS的工作流程
     
     
     
-    <a href="/tags/#wsl" title="wsl" rel="1">wsl</a>
+    <a href="/tags/#wsl" title="wsl" rel="2">wsl</a>
     
     
     
@@ -952,20 +962,20 @@ SS的工作流程
 <div class="widget">
   <ul>
     
-    <a href="2020/10/09/wsl/">
-      <li>WSL相关</li>
+    <a href="2020/10/11/wsl2%E8%AE%BF%E9%97%AE%E5%AE%BF%E4%B8%BB%E6%9C%BA%E4%BB%A3%E7%90%86/">
+      <li>wsl2访问宿主机代理</li>
     </a>
     
     <a href="2020/10/09/Windows%E4%B8%8B%E5%8F%B3%E9%94%AE%E6%96%B0%E5%BB%BA.md%E6%96%87%E4%BB%B6%E6%95%99%E7%A8%8B/">
       <li>右键新建md文件</li>
     </a>
     
-    <a href="2020/10/09/cookie-session-token/">
-      <li>cookie session和token</li>
+    <a href="2020/10/09/wsl/">
+      <li>WSL相关</li>
     </a>
     
-    <a href="2020/08/30/web/">
-      <li>前端基础html和css</li>
+    <a href="2020/10/09/cookie-session-token/">
+      <li>cookie session和token</li>
     </a>
     
     <a href="2020/08/30/spring/">
@@ -1001,7 +1011,7 @@ SS的工作流程
     <!-- <h5>ARCHIVES</h5> -->
     <h5><a href="/archives/">ARCHIVES</a></h5>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/10/">十月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/08/">八月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/07/">七月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/06/">六月 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/05/">五月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/04/">四月 2020</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/10/">十月 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/08/">八月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/07/">七月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/06/">六月 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/05/">五月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/04/">四月 2020</a><span class="archive-list-count">1</span></li></ul>
     </div>
 
 
@@ -1040,6 +1050,10 @@ SS的工作流程
     
     <a href="/categories/#concurrency">
       <li>concurrency</li>
+    </a>
+    
+    <a href="/categories/#wsl">
+      <li>wsl</li>
     </a>
     
   </ul>
