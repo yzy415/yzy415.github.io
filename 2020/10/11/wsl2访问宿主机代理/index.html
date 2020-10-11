@@ -409,7 +409,7 @@
 
 </li>
 </ul>
-<p>上面的命令需要在以管理员身份运行的<code>powershell</code>中键入</p>
+<p>​            上面的命令需要在以管理员身份运行的<code>powershell</code>中键入</p>
 <ul>
 <li><p>在<code>高级安全 Windows Defender 防火墙</code>中选择<code>入站规则</code>，并在右侧找到你使用的代理软件，然后<strong>禁用对应的阻止公用网络的规则</strong>， 比如我（原作者）的是这样：</p>
 <p>![高级安全 Windows](<a href="https://gitee.com/yzy415/imgbed/raw/master/高级安全" target="_blank" rel="noopener">https://gitee.com/yzy415/imgbed/raw/master/高级安全</a> Windows.jpg)</p>
@@ -419,15 +419,15 @@
 </ul>
 </li>
 <li><p>设置WSL环境变量，开启代理</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#The http_proxy and https_proxy environment variable is used to specify proxy settings to client programs such as curl and wget.</span></span><br><span class="line"><span class="built_in">export</span> http_proxy=<span class="string">"socks5://XXX:10808"</span></span><br><span class="line"><span class="built_in">export</span> https_proxy=<span class="string">"socks5://XXX:10808"</span></span><br><span class="line">or</span><br><span class="line"><span class="built_in">export</span> http_proxy=<span class="string">"http://XXX:10809"</span></span><br><span class="line"><span class="built_in">export</span> http_proxy=<span class="string">"http://XXX:10809"</span></span><br></pre></td></tr></table></figure>
+
 </li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#The http_proxy and https_proxy environment variable is used to specify proxy settings to client programs such as curl and wget.</span></span><br><span class="line"><span class="built_in">export</span> http_proxy=<span class="string">"socks5://XXX:10808"</span></span><br><span class="line"><span class="built_in">export</span> https_proxy=<span class="string">"socks5://XXX:10808"</span></span><br><span class="line">or</span><br><span class="line"><span class="built_in">export</span> http_proxy=<span class="string">"http://XXX:10809"</span></span><br><span class="line"><span class="built_in">export</span> http_proxy=<span class="string">"http://XXX:10809"</span></span><br></pre></td></tr></table></figure>
-
 <p>每次开启新的<code>shell</code>时，上述的环境变量都会失效，可以写到<code>.bashrc</code>中</p>
 <ol start="3">
 <li><p>为设置环境变量的命令起一个别名，并写到<code>.bashrc</code>中</p>
 <p>每次重开终端都要在输入<code>2</code>中的命令，很麻烦，可以把这些命令写成别名，并放入到<code>.bashrc</code>中，这样每次开启终端，都可以键入别名开启代理。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">宿主机IP每次都会有变动，自动捕捉变化的ip</span></span><br><span class="line">host=$(cat /etc/resolv.conf | sed -n 's/^nameserver\W\(.*\)$/\1/p')</span><br><span class="line">alias http="export http_proxy="http://$&#123;host&#125;:10809""</span><br><span class="line">alias https="export https_proxy="http://$&#123;host&#125;:10809""</span><br><span class="line">alias dehttp="unset http_proxy"</span><br><span class="line">alias dehttps="unset https_proxy"</span><br></pre></td></tr></table></figure>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#宿主机IP每次都会有变动，自动捕捉变化的ip</span></span><br><span class="line">host=$(cat /etc/resolv.conf | sed -n <span class="string">'s/^nameserver\W\(.*\)$/\1/p'</span>)</span><br><span class="line"><span class="built_in">alias</span> http=<span class="string">"export http_proxy="</span>http://<span class="variable">$&#123;host&#125;</span>:10809<span class="string">""</span></span><br><span class="line"><span class="built_in">alias</span> https=<span class="string">"export https_proxy="</span>http://<span class="variable">$&#123;host&#125;</span>:10809<span class="string">""</span></span><br><span class="line"><span class="built_in">alias</span> dehttp=<span class="string">"unset http_proxy"</span></span><br><span class="line"><span class="built_in">alias</span> dehttps=<span class="string">"unset https_proxy"</span></span><br></pre></td></tr></table></figure>
 
 
 
