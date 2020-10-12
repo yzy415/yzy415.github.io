@@ -141,7 +141,7 @@
   <link rel="canonical" href="https://endp.xyz/2020/10/11/wsl2访问宿主机代理/">
   <title>
     
-    wsl2访问宿主机代理 - Relax!
+    wsl2和wsl2下的Git访问宿主机代理 - Relax!
     
   </title>
 <meta name="generator" content="Hexo 4.2.1"></head>
@@ -314,8 +314,8 @@
               <a class="tag" href="/tags/#wsl" title="wsl">wsl</a>
               
             </div>
-            <h1>wsl2访问宿主机代理</h1>
-            <h2 class="subheading">利用宿主机代理加速wsl2！！！</h2>
+            <h1>wsl2和wsl2下的Git访问宿主机代理</h1>
+            <h2 class="subheading">利用宿主机代理加速wsl2与外网和Git库的连接！！！</h2>
             <span class="meta">
               Posted by Yan on
               2020-10-11
@@ -326,11 +326,11 @@
             <!-- WordCount start -->
             <div class="blank_box"></div>
             <span class="meta">
-              Estimated Reading Time <span class="post-count">1</span> Minutes
+              Estimated Reading Time <span class="post-count">2</span> Minutes
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">448</span> In Total
+              Words <span class="post-count">697</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- 不蒜子统计 start -->
@@ -390,10 +390,10 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h1 id="wsl2访问宿主机代理："><a href="#wsl2访问宿主机代理：" class="headerlink" title="wsl2访问宿主机代理："></a>wsl2访问宿主机代理：</h1><blockquote>
+        <h2 id="wsl2访问宿主机代理："><a href="#wsl2访问宿主机代理：" class="headerlink" title="wsl2访问宿主机代理："></a>wsl2访问宿主机代理：</h2><blockquote>
 <p>参考了知乎大佬的<a href="https://zhuanlan.zhihu.com/p/144583887" target="_blank" rel="noopener">文章</a>，感谢前人爬坑！</p>
 </blockquote>
-<h2 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h2><ol>
+<h3 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h3><ol>
 <li><p>wsl2与宿主机组成了局域网，wsl2只能通过宿主机的ip地址来访问宿主机</p>
 </li>
 <li><p>宿主机的ip是会变动的</p>
@@ -401,7 +401,7 @@
 <li><p>windows防火墙默认阻止入站网络请求</p>
 </li>
 </ol>
-<h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h2><ol>
+<h3 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h3><ol>
 <li><p>允许wsl2的入站请求</p>
 <ul>
 <li><p>允许wsl2的入站请求</p>
@@ -434,6 +434,32 @@
 </li>
 </ol>
 <p>   也可以使用大佬的<a href="https://gist.githubusercontent.com/wizcas/d9b0dd99beffaca34ff0313e50a77031/raw/c8031e9f2a0872209ec21b25355cd0059e3ca084/wslproxy-zh.sh" target="_blank" rel="noopener">脚本</a></p>
+<h2 id="SSH方式连接Git库时使用代理"><a href="#SSH方式连接Git库时使用代理" class="headerlink" title="SSH方式连接Git库时使用代理"></a>SSH方式连接Git库时使用代理</h2><ol>
+<li><p>设置SSH配置文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#vim ~/.ssh/config, 添加如下命令</span></span><br><span class="line">Host github.com</span><br><span class="line">User git</span><br><span class="line">Hostname github.com</span><br><span class="line">ProxyCommand nc -X 5 -x hostip:10809 %h %p</span><br><span class="line"><span class="comment">#hostip如上所述是会发生变动的，2步骤会把hostip替换为当前宿主机的真实ip</span></span><br><span class="line"><span class="comment">#上面的5是socks5，若使用的代理是https则可以把5替换为connect</span></span><br><span class="line">ServerAliveInterval 30</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>替换SSH配置文件中的<code>hostip</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#vim ~/.bashrc，每次打开终端都会修改配置文件</span></span><br><span class="line"><span class="comment">#修改git配置文件中的代理主机ip</span></span><br><span class="line">sed -i <span class="string">"s/hostip/<span class="variable">$host</span>/"</span> ~/.ssh/config</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>测试代理是否成功</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#调试模式</span></span><br><span class="line">ssh -v git@github.com</span><br></pre></td></tr></table></figure>
+
+<p>输出：</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">debug1: Executing<span class="built_in"> proxy </span>command: exec nc -X connect -x 172.XXX.XXX.XXX:10809 github.com 22</span><br><span class="line">You<span class="string">'ve successfully authenticated, but GitHub does not provide shell access.</span></span><br></pre></td></tr></table></figure>
+
+<p>成功！！！</p>
+</li>
+<li><p>Http方式连接Git库时使用代理</p>
+<ul>
+<li><p>简单方法就是使用上一节提到的<code>http</code>别名，该全局代理</p>
+</li>
+<li><p>针对Git，可以使用如下命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#开启</span></span><br><span class="line">git config --global http.proxy http://proxy.mycompany:80</span><br><span class="line"><span class="comment">#关闭</span></span><br><span class="line">git config --global --<span class="built_in">unset</span> http.proxy</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ol>
 
 
         <hr>
@@ -485,7 +511,7 @@
       </a>
     </li>
     <li class="social-share-li">
-      <a target="_blank" class="social-share-icon" href="mailto:?subject=wsl2访问宿主机代理&body=Hi,I found this website and thought you might like it https://endp.xyz/2020/10/11/wsl2访问宿主机代理/">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=wsl2和wsl2下的Git访问宿主机代理&body=Hi,I found this website and thought you might like it https://endp.xyz/2020/10/11/wsl2访问宿主机代理/">
         <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
       </a>
     </li>
@@ -572,7 +598,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#wsl2访问宿主机代理："><span class="toc-nav-number">1.</span> <span class="toc-nav-text">wsl2访问宿主机代理：</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#注意点"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">注意点</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#操作步骤"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">操作步骤</span></a></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#wsl2访问宿主机代理："><span class="toc-nav-number">1.</span> <span class="toc-nav-text">wsl2访问宿主机代理：</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#注意点"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">注意点</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#操作步骤"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">操作步骤</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#SSH方式连接Git库时使用代理"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">SSH方式连接Git库时使用代理</span></a></li></ol>
         
         </div>
       </aside>
