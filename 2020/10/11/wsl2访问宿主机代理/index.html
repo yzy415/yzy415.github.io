@@ -326,11 +326,11 @@
             <!-- WordCount start -->
             <div class="blank_box"></div>
             <span class="meta">
-              Estimated Reading Time <span class="post-count">2</span> Minutes
+              Estimated Reading Time <span class="post-count">3</span> Minutes
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">697</span> In Total
+              Words <span class="post-count">729</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- 不蒜子统计 start -->
@@ -436,10 +436,10 @@
 <p>   也可以使用大佬的<a href="https://gist.githubusercontent.com/wizcas/d9b0dd99beffaca34ff0313e50a77031/raw/c8031e9f2a0872209ec21b25355cd0059e3ca084/wslproxy-zh.sh" target="_blank" rel="noopener">脚本</a></p>
 <h2 id="SSH方式连接Git库时使用代理"><a href="#SSH方式连接Git库时使用代理" class="headerlink" title="SSH方式连接Git库时使用代理"></a>SSH方式连接Git库时使用代理</h2><ol>
 <li><p>设置SSH配置文件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#vim ~/.ssh/config, 添加如下命令</span></span><br><span class="line">Host github.com</span><br><span class="line">User git</span><br><span class="line">Hostname github.com</span><br><span class="line">ProxyCommand nc -X 5 -x hostip:10809 %h %p</span><br><span class="line"><span class="comment">#hostip如上所述是会发生变动的，2步骤会把hostip替换为当前宿主机的真实ip</span></span><br><span class="line"><span class="comment">#上面的5是socks5，若使用的代理是https则可以把5替换为connect</span></span><br><span class="line">ServerAliveInterval 30</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#vim ~/.ssh/config, 添加如下命令</span></span><br><span class="line">Host github.com</span><br><span class="line">User git</span><br><span class="line">Hostname github.com</span><br><span class="line">ProxyCommand nc -X 5 -x 127.0.0.1:10809 %h %p</span><br><span class="line"><span class="comment">#宿主机ip如上所述是会发生变动的，2步骤会把127.0.0.1替换为当前宿主机的真实ip</span></span><br><span class="line"><span class="comment">#上面的5是socks5，若使用的代理是https则可以把5替换为connect</span></span><br><span class="line">ServerAliveInterval 30</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>替换SSH配置文件中的<code>hostip</code></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#vim ~/.bashrc，每次打开终端都会修改配置文件</span></span><br><span class="line"><span class="comment">#修改git配置文件中的代理主机ip</span></span><br><span class="line">sed -i <span class="string">"s/hostip/<span class="variable">$host</span>/"</span> ~/.ssh/config</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#vim ~/.bashrc，每次打开终端都会修改配置文件</span></span><br><span class="line"><span class="comment">#修改git配置文件中的代理主机ip</span></span><br><span class="line">sed -i <span class="string">"s/[0-9]\&#123;1,3\&#125;\.[0-9]\&#123;1,3\&#125;\.[0-9]\&#123;1,3\&#125;\.[0-9]\&#123;1,3\&#125;/<span class="variable">$youwouldnotuse</span>/"</span> ~/.ssh/config</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>测试代理是否成功</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#调试模式</span></span><br><span class="line">ssh -v git@github.com</span><br></pre></td></tr></table></figure>
