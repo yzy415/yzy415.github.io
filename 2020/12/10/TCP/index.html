@@ -413,7 +413,7 @@
 <li><p>FIN_WAIT_2，断开方接收到ACK后进入状态，等待FIN；自己不再发送消息，等待对方断开连接</p>
 </li>
 <li><p>TIME_WAIT，断开方接受到FIN并返回ACK后进入状态，等待一段时间时间，一般是30秒，如果返回的ACK丢掉了，可以再这段时间里，重新发送；自己不再接受消息，连接彻底断开。</p>
-<p><img src="C:%5CUsers%5Cflipp%5CDesktop%5CTCP.assets%5Ctcp-connection-closed-four-way-handshake.png" alt="four-way-handshake"></p>
+<p><img src="https://gitee.com/yzy415/imgbed/raw/master/tcp-connection-closed-four-way-handshake.png" alt="four-way-handshake"></p>
 <p>​                    注意看上图，是应用层主动发出的断开</p>
 </li>
 </ol>
@@ -429,7 +429,7 @@
 </ol>
 <p>等待时间默认为  <strong>两个</strong>Maximum segment lifetime（报文段在网络中停留的最大时间的估计值，linux默认为1种，两个即一个往返、两分钟）。</p>
 <h3 id="状态变化"><a href="#状态变化" class="headerlink" title="状态变化"></a>状态变化</h3><hr>
-<p><img src="C:%5CUsers%5Cflipp%5CDesktop%5CTCP.assets%5C5iSay.gif" alt=""></p>
+<p><img src="C:%5Cfiles%5Chexo%5Csource_posts%5CTCP.assets%5C5iSay.gif" alt=""></p>
 <h2 id="REF"><a href="#REF" class="headerlink" title="REF"></a>REF</h2><ol>
 <li><p>“三次握手，四次挥手”你真的懂吗？ - Stefno的文章 - 知乎 <a href="https://zhuanlan.zhihu.com/p/53374516" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/53374516</a>   写的挺好的</p>
 </li>
