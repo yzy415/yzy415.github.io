@@ -422,6 +422,48 @@ This LiveMyLife theme created by Vincent modified from the original Porter YenYu
   
 
 
+  <a href="/2020/12/10/TCP/">
+    <h2 class="post-title">
+      TCP
+    </h2>
+    <h3 class="post-subtitle">
+      
+    </h3>
+    <div class="post-content-preview">
+      连接的建立和取消三次握手握手目的双方都要确认现在自己能否把消息传给对方
+概述C端的第一个SYN需要S端的一个ACK来确认C端可以发消息给S端。
+S端的再发送ACK时捎带发送SYN，需要C端返回ACK确认S端可以发送消息给C端。
+为什么三次握手
+
+双端都要确认自己是否能把消息传递给对方，所以要发四次消息，所以不能只握两次手；
+其中两个消息可以放到同一报文里，所以只需要三次握手而不是四次握手。
+......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Yan on
+    2020-12-10
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#计算机网络" title="计算机网络">计算机网络</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+
   <a href="/2020/12/01/java包和路径/">
     <h2 class="post-title">
       java包和路径
@@ -484,6 +526,49 @@ Extension classes - Classes that ......
   <div class="tags">
     
     <a href="/tags/#java基础知识" title="java基础知识">java基础知识</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+
+  <a href="/2020/11/24/react笔记/">
+    <h2 class="post-title">
+      React笔记
+    </h2>
+    <h3 class="post-subtitle">
+      
+    </h3>
+    <div class="post-content-preview">
+      React核心概念
+JSX简介
+为了便于阅读，我们会将 JSX 拆分为多行。同时，我们建议将内容包裹在括号中，虽然这样做不是强制要求的，但是这可以避免遇到自动插入分号陷阱。
+
+元素渲染
+元素需要被渲染成DOM才能被看到，元素不可变React 只更新它需要更新的部分根据我们的经验，考虑 UI 在任意给定时刻的状态，而不是随时间变化的过程，能够消灭一整类的 bug。
+
+组件&amp;Props
+......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Yan on
+    2020-11-24
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#react" title="react">react</a>
     
   </div>
   
@@ -586,6 +671,46 @@ windows防火墙默认阻止入站网络请求
   
 
 
+  <a href="/2020/10/09/Windows下右键新建.md文件教程/">
+    <h2 class="post-title">
+      右键新建md文件
+    </h2>
+    <h3 class="post-subtitle">
+      
+    </h3>
+    <div class="post-content-preview">
+      https://stepneverstop.github.io/win-rightclick-create-md.html
+原本创建.md文件需要首先打开markdown文本编辑器，如Typora，或者新建.txt文件然后修改后缀名，本文介绍了如何在Windows操作系统中添加右键创建.md文件的方法。
+环境windows10操作系统Typora编辑器
+效果图
+步骤1. 打开注册表
+CMD+......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Yan on
+    2020-10-09
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#windows" title="windows">windows</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+
   <a href="/2020/10/09/wsl/">
     <h2 class="post-title">
       WSL相关
@@ -644,129 +769,6 @@ cookie(客户端存放用户信息的数据)由服务器生成并保存在浏览
   <p class="post-meta" style="margin: 10px 0;">
     Posted by Yan on
     2020-10-09
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#front-end" title="front-end">front-end</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-
-  <a href="/2020/10/09/Windows下右键新建.md文件教程/">
-    <h2 class="post-title">
-      右键新建md文件
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      https://stepneverstop.github.io/win-rightclick-create-md.html
-原本创建.md文件需要首先打开markdown文本编辑器，如Typora，或者新建.txt文件然后修改后缀名，本文介绍了如何在Windows操作系统中添加右键创建.md文件的方法。
-环境windows10操作系统Typora编辑器
-效果图
-步骤1. 打开注册表
-CMD+......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Yan on
-    2020-10-09
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#windows" title="windows">windows</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-
-  <a href="/2020/08/30/spring/">
-    <h2 class="post-title">
-      Spring
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      Spring基本概念
-bean，spring中组成应用的关键对象叫作bean
-container，管理bean，负责bean的初始化、配置以及组装，BeanFactory接口是基础container，ApplicationContext是它的子接口，实现可更为高级的管理功能
-Inversion of Control(IoC)又叫作Dependency injection指的是对象只通过构造器......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Yan on
-    2020-08-30
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#java" title="java">java</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-
-  <a href="/2020/08/30/web/">
-    <h2 class="post-title">
-      前端基础html和css
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      前端基础HTML缩写
-anchor &lt;a&gt;
-unorder list &lt;ul&gt;
-list item &lt;li&gt;
-order list &lt;ol&gt;
-emphasis &lt;em&gt;
-strong strong importance
-italic &lt;i&gt;
-bold &lt;b&gt;
-underline &lt;u&gt;
-langu......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Yan on
-    2020-08-30
   </p>
   <div class="tags">
     
@@ -863,6 +865,14 @@ langu......
     <a href="/tags/#java基础知识" title="java基础知识" rel="2">java基础知识</a>
     
     
+    
+    <a href="/tags/#计算机网络" title="计算机网络" rel="1">计算机网络</a>
+    
+    
+    
+    <a href="/tags/#react" title="react" rel="1">react</a>
+    
+    
   </div>
 </section>
 
@@ -950,24 +960,24 @@ langu......
 <div class="widget">
   <ul>
     
-    <a href="2020/12/01/java%E5%8C%85%E5%92%8C%E8%B7%AF%E5%BE%84/">
-      <li>java包和路径</li>
+    <a href="2020/12/10/TCP/">
+      <li>TCP</li>
     </a>
     
     <a href="2020/12/01/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8/">
       <li>类加载器</li>
     </a>
     
+    <a href="2020/12/01/java%E5%8C%85%E5%92%8C%E8%B7%AF%E5%BE%84/">
+      <li>java包和路径</li>
+    </a>
+    
+    <a href="2020/11/24/react%E7%AC%94%E8%AE%B0/">
+      <li>React笔记</li>
+    </a>
+    
     <a href="2020/11/24/%E8%87%AA%E5%88%B6tomcat%E7%AC%94%E8%AE%B0/">
       <li>自制Tomcat笔记</li>
-    </a>
-    
-    <a href="2020/10/11/wsl2%E8%AE%BF%E9%97%AE%E5%AE%BF%E4%B8%BB%E6%9C%BA%E4%BB%A3%E7%90%86/">
-      <li>wsl2和wsl2下的Git访问宿主机代理</li>
-    </a>
-    
-    <a href="2020/10/09/wsl/">
-      <li>WSL相关</li>
     </a>
     
   </ul>
@@ -999,7 +1009,7 @@ langu......
     <!-- <h5>ARCHIVES</h5> -->
     <h5><a href="/archives/">ARCHIVES</a></h5>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/12/">十二月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/11/">十一月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/10/">十月 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/08/">八月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/07/">七月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/06/">六月 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/05/">五月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/04/">四月 2020</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/12/">十二月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/11/">十一月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/10/">十月 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/08/">八月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/07/">七月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/06/">六月 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/05/">五月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/04/">四月 2020</a><span class="archive-list-count">1</span></li></ul>
     </div>
 
 
@@ -1050,6 +1060,14 @@ langu......
     
     <a href="/categories/#java">
       <li>java</li>
+    </a>
+    
+    <a href="/categories/#基础知识">
+      <li>基础知识</li>
+    </a>
+    
+    <a href="/categories/#前端, 基础知识">
+      <li>前端, 基础知识</li>
     </a>
     
   </ul>

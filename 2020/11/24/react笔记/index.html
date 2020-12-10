@@ -71,12 +71,12 @@
 
   <!-- Pygments Highlight CSS -->
   
-<link rel="stylesheet" href="../../css/highlight.css">
-<link rel="stylesheet" href="../../css/widget.css">
-<link rel="stylesheet" href="../../css/rocket.css">
-<link rel="stylesheet" href="../../css/signature.css">
-<link rel="stylesheet" href="../../css/catalog.css">
-<link rel="stylesheet" href="../../css/livemylife.css">
+<link rel="stylesheet" href="../../../../css/highlight.css">
+<link rel="stylesheet" href="../../../../css/widget.css">
+<link rel="stylesheet" href="../../../../css/rocket.css">
+<link rel="stylesheet" href="../../../../css/signature.css">
+<link rel="stylesheet" href="../../../../css/catalog.css">
+<link rel="stylesheet" href="../../../../css/livemylife.css">
 
 
   
@@ -138,10 +138,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="https://endp.xyz/tags/network/">
+  <link rel="canonical" href="https://endp.xyz/2020/11/24/react笔记/">
   <title>
     
-    Relax!
+    React笔记 - Relax!
     
   </title>
 <meta name="generator" content="Hexo 4.2.1"></head>
@@ -289,8 +289,8 @@
 
   <style type="text/css">
     header.intro-header {
-       /*page*/
-        background-image: url('/img/header_img/archive_bg2.jpg');
+       /*post*/
+        background-image: url('');
       
     }
 
@@ -308,10 +308,40 @@
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           
-          <div class="site-heading">
-            <h1>语言的漩涡</h1>
-            <!--<hr class="small">-->
-            <span class="subheading">基于语言的思考走向语言的漩涡</span>
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#react" title="react">react</a>
+              
+            </div>
+            <h1>React笔记</h1>
+            <h2 class="subheading"></h2>
+            <span class="meta">
+              Posted by Yan on
+              2020-11-24
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">4</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">1.2k</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- 不蒜子统计 start -->
+            <span class="meta">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            <!-- WordCount end -->
+            
+
+
           </div>
           
         </div>
@@ -352,637 +382,332 @@
 	Friends Blog、
 	anchorjs、
 	) -->
-	<!-- Main Content -->
-<div class="container">
-  <div class="row">
-    
+	<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-    <!-- USE SIDEBAR -->
-    <!-- Post Container -->
-    <div class="
-                col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                post-container
-            ">
+        <h1 id="React"><a href="#React" class="headerlink" title="React"></a>React</h1><h2 id="核心概念"><a href="#核心概念" class="headerlink" title="核心概念"></a>核心概念</h2><ol>
+<li><p>JSX简介</p>
+<p>为了便于阅读，我们会将 JSX 拆分为多行。同时，我们建议将内容包裹在括号中，虽然这样做不是强制要求的，但是这可以避免遇到<a href="http://stackoverflow.com/q/2846283" target="_blank" rel="noopener">自动插入分号</a>陷阱。</p>
+</li>
+<li><p>元素渲染</p>
+<p>元素需要被渲染成DOM才能被看到，元素不可变<br>React 只更新它需要更新的部分<br>根据我们的经验，考虑 UI 在任意给定时刻的状态，而不是随时间变化的过程，能够消灭一整类的 bug。</p>
+</li>
+<li><p>组件&amp;Props</p>
+<p>类似于函数，输入为props对象，返回React元素；</p>
+<p>组件可以写成class的形式    </p>
+<p>除了DOM元素，组件也可以用作React元素；</p>
+<p>元素的属性及其子组件可以转换为单个props对象传给组件。</p>
+<p><strong>所有 React 组件都必须像纯函数一样保护它们的 props 不被更改。</strong></p>
+</li>
+<li><p>State&amp;生命周期</p>
+<p>使用State，组件必须为class</p>
+<p>生命周期方法<code>componentDidMount()</code> 方法会在组件已经被渲染到 DOM 中后运行。</p>
+<p>一旦 组件从 DOM 中被移除，React 就会调用 <code>componentWillUnmount()</code> 生命周期方法</p>
+<p>clearInterval(this.timerID);计时器ID挺好玩</p>
+</li>
+<li><p>事件处理</p>
+<p>在 React 中另一个不同点是你不能通过返回 <code>false</code> 的方式阻止默认行为。你必须显式的使用 <code>preventDefault</code> 。例如，传统的 HTML 中阻止链接默认打开一个新页面，你可以这样写：</p>
+<p>在 JavaScript 中，class 的方法默认不会<a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_objects/Function/bind" target="_blank" rel="noopener">绑定</a> <code>this</code>。</p>
+<p>我们通常建议在构造器中绑定或使用 class fields 语法来避免这类性能问题。</p>
+</li>
+<li><p>条件渲染</p>
+<p>使用if来决定返回什么样的元素；</p>
+<p>通过花括号包裹代码，你可以<a href="https://zh-hans.reactjs.org/docs/introducing-jsx.html#embedding-expressions-in-jsx" target="_blank" rel="noopener">在 JSX  <strong><em>中</em></strong>  嵌入表达式</a>。（包括运算符和三目）</p>
+<p>使用花括号<code>{}</code>包裹运算符<code>&amp;&amp;</code>来简化if；使用三目运算符来决定返回什么样的元素内容（元素内容）。</p>
+<p>组件的返回元素为null，则该组件不会进行渲染。</p>
+</li>
+<li><p>列表&amp;key</p>
+<p>每个组件都默认有一个key，React使用key来判断哪些元素改变了，比如被添加或删除。</p>
+<p>不指定显示的key值，React将默认使用索引作为列表项目于的key值。万不得已可以使用Index作为key值。</p>
+<p><em>一个好的经验法则是</em>：在 <code>map()</code> 方法中的元素需要设置 key 属性。<a href="https://zh-hans.reactjs.org/docs/lists-and-keys.html#extracting-components-with-keys" target="_blank" rel="noopener">key的位置</a>。</p>
+<p>同列表（即兄弟节点）中的key必须独一无二，全局下，不同列表内的列表项可以有相同的key。</p>
+<p>key是给React用的，自己读不出来。</p>
+<p>JSX允许在<code>{}</code>中嵌入任何表达式，自然也可以嵌入<code>map()</code></p>
+</li>
+<li><p>表单（受控组件）</p>
+<p>使用组件的状态值来维护表单的状态值，被控制的表单元素成为受控组件。</p>
+<p>表单元素有: select, input, testarea</p>
+<p>多个表单元素可以只用一个事件处理器，事件处理器获取每个元素的name属性，来决定如何操作。</p>
+<p><code>&lt;input type=&quot;file&quot;&gt;</code>的值为只读，是一个非受控组件。</p>
+</li>
+<li><p>状态提升</p>
+<p>多个组件共享相同的变化数据时，建议把共享的状态提升到<strong>最近</strong>的共同父组件去。就是等着父类把状态通过props传给自己。</p>
+<p><img src="https://gitee.com/yzy415/imgbed/raw/master/image-20201203152726679.png" alt="image-20201203152726679"></p>
+<p>A输入框和B输入框共享温度，温度信息由其父通过props传给他们。</p>
+</li>
+<li><p>组合和继承</p>
+<p>推荐组合而非继承来实现组件间的代码重用。</p>
+<p>组件标签内的所有内容都会作为一个<code>children</code> prop传递给组件。组件可以使用<code>props.children</code>来获取标签内的所有内容。</p>
+<p>组件的prop也可以传递元素。</p>
+<p>组件可以接受任意 props，包括基本数据类型，React 元素以及函数。</p>
+</li>
+<li><p>React哲学</p>
+<p>先做出静态页面，再考虑交互。设置静态页面时不用考虑state。考虑交互时，先考虑怎样让state集合尽可能小，然后考虑吧state放到哪里。</p>
+</li>
+</ol>
+<p>​    </p>
+<p>​    </p>
+<p>​    </p>
+<hr>
+<h2 id="题外话"><a href="#题外话" class="headerlink" title="题外话"></a>题外话</h2><h3 id="this"><a href="#this" class="headerlink" title="this"></a>this</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = &#123;</span><br><span class="line">    		b:<span class="function"><span class="params">()</span>=&gt;</span><span class="built_in">console</span>.log(<span class="keyword">this</span>),</span><br><span class="line">    	&#125;;</span><br><span class="line">a.b() <span class="comment">// window</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a = &#123;</span><br><span class="line">			b:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="built_in">console</span>.log(<span class="keyword">this</span>)&#125;,</span><br><span class="line">		&#125;;</span><br><span class="line">a.b()<span class="comment">//  a</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a =&#123;</span><br><span class="line">    	b: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        		(<span class="function"><span class="params">()</span>=&gt;</span>&#123;<span class="built_in">console</span>.log(<span class="keyword">this</span>);&#125;)()&#125;,</span><br><span class="line">		&#125;;</span><br><span class="line">a.b()<span class="comment">//a, 箭头函数里的this指向b的this，在a上调用b时，b的this指向a</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a =&#123;</span><br><span class="line">    b: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="built_in">console</span>.log(<span class="keyword">this</span>);&#125;)()&#125;,&#125;</span><br><span class="line"></span><br><span class="line">a.b()<span class="comment">//window,没人调用匿名函数</span></span><br></pre></td></tr></table></figure>
 
-      
-<!-- Main Content -->
-<div class="container">
-  <div class="row">
-    <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1">
-      <!-- 归档列表 -->
+<p>箭头函数没有自己的thisBinding，内部的this为定义时其所在作用域的this。</p>
+<p>普通函数被对象调用时，this指向对象</p>
+<h2 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h2><ol>
+<li><a href="https://reactjs.org/docs/hello-world.html" target="_blank" rel="noopener">Hello World – React (reactjs.org)</a></li>
+</ol>
 
-      
 
-      <!-- 归档列表 -->
-
-      
-      <div class="one-tag-list">
-        <span class="fa fa-calendar-times-o listing-seperator" id="2020">
-          <span class="tag-text">2020</span>
-        </span>
-        <ul>
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
           
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            12-10
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2020/12/10/TCP/" style="color: #0085a1">
-              <span>
-                TCP
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+          <li class="previous">
+            <a href="/2020/12/01/类加载器/" data-toggle="tooltip" data-placement="top" title="类加载器">&larr; Previous Post</a>
           </li>
           
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            12-01
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2020/12/01/java包和路径/" style="color: #0085a1">
-              <span>
-                java包和路径
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
           
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            12-01
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2020/12/01/类加载器/" style="color: #0085a1">
-              <span>
-                类加载器
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            11-24
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2020/11/24/react笔记/" style="color: #0085a1">
-              <span>
-                React笔记
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            11-24
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2020/11/24/自制tomcat笔记/" style="color: #0085a1">
-              <span>
-                自制Tomcat笔记
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            10-11
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2020/10/11/wsl2访问宿主机代理/" style="color: #0085a1">
-              <span>
-                wsl2和wsl2下的Git访问宿主机代理
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            10-09
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2020/10/09/Windows下右键新建.md文件教程/" style="color: #0085a1">
-              <span>
-                右键新建md文件
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            10-09
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2020/10/09/wsl/" style="color: #0085a1">
-              <span>
-                WSL相关
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            10-09
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2020/10/09/cookie-session-token/" style="color: #0085a1">
-              <span>
-                cookie session和token
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            08-30
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2020/08/30/spring/" style="color: #0085a1">
-              <span>
-                Spring
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            08-30
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2020/08/30/web/" style="color: #0085a1">
-              <span>
-                前端基础html和css
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            08-23
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2020/08/23/maven/" style="color: #0085a1">
-              <span>
-                Maven
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            07-05
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2020/07/05/源码_SS_1/" style="color: #0085a1">
-              <span>
-                SS源码（上）
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            07-05
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2020/07/05/源码_SS_2/" style="color: #0085a1">
-              <span>
-                SS源码（下）
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            06-25
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2020/06/25/Java_并发/" style="color: #0085a1">
-              <span>
-                Java并发（1）
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            06-25
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2020/06/25/2020-06-25-FileSystem_Hierachyg_Standard/" style="color: #0085a1">
-              <span>
-                文件系统常用目录
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            06-21
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2020/06/21/2020-06-21-操作系统device_and_module/" style="color: #0085a1">
-              <span>
-                设备和模组
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            06-14
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2020/06/14/2020-06-14-操作系统page_cache_and_writeback - 副本/" style="color: #0085a1">
-              <span>
-                页缓存和写回
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            05-15
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2020/05/15/2020-05-15-操作系统怎么读取一个文件/" style="color: #0085a1">
-              <span>
-                文件读取
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            04-17
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2020/04/17/Hexo-Theme-LiveMyLife/" style="color: #0085a1">
-              <span>
-                Hexo-Theme-LiveMyLife
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+          <li class="next">
+            <a href="/2020/11/24/自制tomcat笔记/" data-toggle="tooltip" data-placement="top" title="自制Tomcat笔记">Next Post &rarr;</a>
           </li>
           
         </ul>
+
+        
+        <!-- tip start -->
+        <div class="tip">
+          <p>
+            If you like this blog or find it useful for you, you are welcome to comment on it. You are also welcome to share this blog, so that more people can participate in it. If the images used in the blog infringe your copyright, please contact the author to delete them. Thank you !
+          </p>
+        </div>
+        <!-- tip end -->
+        
+
+        
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=React笔记&body=Hi,I found this website and thought you might like it https://endp.xyz/2020/11/24/react笔记/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+        <!-- Sharing End -->
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+<!-- gitalk start -->
+<!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
+
+<div id="gitalk-container"></div>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.js"></script> -->
+<script src="/js/comment/gitalk.js"></script>
+
+<script>
+  var gitalk = new Gitalk({
+    clientID: '',
+    clientSecret: '',
+    repo: '',
+    owner: '',
+    admin: '',
+    id: 'Tue Nov 24 2020 02:34:17 GMT+0800', // Ensure uniqueness and length less than 50
+    distractionFreeMode: false, // Facebook-like distraction free mode
+    perPage: 10 ,
+    pagerDirection: 'last',
+    createIssueManually: false ,
+    language: 'en'
+  });
+  gitalk.render('gitalk-container');
+
+  var gtFolded = () => {
+    setTimeout(function() {
+      let markdownBody = document.getElementsByClassName("markdown-body");
+      let list = Array.from(markdownBody);
+      list.forEach(item => {
+        if (item.clientHeight > 250) {
+          item.classList.add('gt-comment-body-folded');
+          item.style.maxHeight = '250px';
+          item.title = 'Click to Expand';
+          item.onclick = function() {
+            item.classList.remove('gt-comment-body-folded');
+            item.style.maxHeight = '';
+            item.title = '';
+            item.onclick = null;
+          };
+        }
+      })
+    }, 800);
+  }
+</script>
+
+<!-- gitalk end -->
+
+
+
+<!-- 2. gitment comment -->
+
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
       </div>
-      
 
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
 
-    </div>
-  </div>
-</div>
-
-
-      <!-- 如果开启评论功能 -->
-      
-    </div>
-
-    <!-- Sidebar Container -->
-<div class="
-    col-lg-3 col-lg-offset-0
-    col-md-3 col-md-offset-0
-    col-sm-12
-    col-xs-12
-    sidebar-container
-">
     
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
         
-<!-- <h5>VISITORS</h5> -->
-<h5><a href="/">VISITORS</a></h5>
-<div class="widget">
-  <span>
-    Viewed <b><i><span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Times
-  </span>
-  <br />
-  <span>
-    <b><i><span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Visitors In Total
-  </span>
-</div>
-
-
-        <hr>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#React"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">React</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#核心概念"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">核心概念</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#题外话"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">题外话</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#this"><span class="toc-nav-number">1.2.1.</span> <span class="toc-nav-text">this</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Ref"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">Ref</span></a></li></ol></li></ol>
+        
+        </div>
+      </aside>
     
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
         <!-- Featured Tags -->
-
-<section>
-  <!-- no hr -->
-  <h5><a href="/tags/">FEATURED TAGS</a></h5>
-  <div class="tags">
-    
-    
-    <a href="/tags/#Hexo" title="Hexo" rel="1">Hexo</a>
-    
-    
-    
-    <a href="/tags/#Hexo-Theme-LiveMyLife" title="Hexo-Theme-LiveMyLife" rel="1">Hexo-Theme-LiveMyLife</a>
-    
-    
-    
-    <a href="/tags/#windows" title="windows" rel="1">windows</a>
-    
-    
-    
-    <a href="/tags/#java" title="java" rel="3">java</a>
-    
-    
-    
-    <a href="/tags/#wsl" title="wsl" rel="2">wsl</a>
-    
-    
-    
-    <a href="/tags/#network" title="network" rel="2">network</a>
-    
-    
-    
-    <a href="/tags/#front-end" title="front-end" rel="2">front-end</a>
-    
-    
-    
-    <a href="/tags/#server, tomcat" title="server, tomcat" rel="1">server, tomcat</a>
-    
-    
-    
-    <a href="/tags/#java基础知识" title="java基础知识" rel="2">java基础知识</a>
-    
-    
-    
-    <a href="/tags/#计算机网络" title="计算机网络" rel="1">计算机网络</a>
-    
-    
-    
-    <a href="/tags/#react" title="react" rel="1">react</a>
-    
-    
-  </div>
-</section>
-
-
-        <hr>
-    
-        <!-- Short About -->
-<section class="visible-md visible-lg">
-  <h5><a href="/about/">ABOUT ME</a></h5>
-  <div class="short-about">
-
-    
-    <img id="avatar_pic" src="/img/avatar/growstrong.jpg" alt="avatar_pic" style="box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
-    -moz-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
-    -webkit-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);" />
-    
-
-    
-    <p>Grow Strong!</p>
-    
-
-    <!-- SNS Link -->
-    <ul class="list-inline">
-      
-
-      
-      <li>
-        <a target="_blank" href="https://github.com/yzy415">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
-      
-
-      
-      <li>
-        <a target="_blank" href="https://twitter.com/yzy415">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
-      
-
-      
-      <li>
-        <a target="_blank" href="https://www.instagram.com/yzy415">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
-      
-
-      
-
-      
-
-      
-
-      
-      <li>
-        <a target="_blank" href="http://weibo.com/yzy415">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
-      
-
-    </ul>
-  </div>
-</section>
-
-        <hr>
-    
         
-<!-- <h5>RECENT POSTS</h5> -->
-<h5><a href="/">RECENT POSTS</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="../../2020/12/10/TCP/">
-      <li>TCP</li>
-    </a>
-    
-    <a href="../../2020/12/01/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8/">
-      <li>类加载器</li>
-    </a>
-    
-    <a href="../../2020/12/01/java%E5%8C%85%E5%92%8C%E8%B7%AF%E5%BE%84/">
-      <li>java包和路径</li>
-    </a>
-    
-    <a href="../../2020/11/24/react%E7%AC%94%E8%AE%B0/">
-      <li>React笔记</li>
-    </a>
-    
-    <a href="../../2020/11/24/%E8%87%AA%E5%88%B6tomcat%E7%AC%94%E8%AE%B0/">
-      <li>自制Tomcat笔记</li>
-    </a>
-    
-  </ul>
-</div>
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">FEATURED TAGS</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#react" title="react">react</a>
+            
+          </div>
+        </section>
+        
 
-
-        <hr>
-    
         <!-- Friends Blog -->
-
-<!-- <h5>FRIENDS</h5> -->
-<h5><a href="/">FRIENDS</a></h5>
-<ul class="list-inline">
-  
-  <li><a href="https://v-vincen.life/" target="_blank">V_Vincen</a></li>
-  
-  <li><a href="http://beantech.org" target="_blank">Bean Tech</a></li>
-  
-  <li><a href="http://huangxuan.me" target="_blank">Hux Blog</a></li>
-  
-  <li><a href="https://hexo.io/" target="_blank">Hexo</a></li>
-  
-</ul>
-
-
-        <hr>
-    
         
-    <!-- <h5>ARCHIVES</h5> -->
-    <h5><a href="/archives/">ARCHIVES</a></h5>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2020/12/">十二月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2020/11/">十一月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2020/10/">十月 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2020/08/">八月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2020/07/">七月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2020/06/">六月 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2020/05/">五月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2020/04/">四月 2020</a><span class="archive-list-count">1</span></li></ul>
+        <hr>
+        <h5>FRIENDS</h5>
+        <ul class="list-inline">
+
+          
+          <li>
+            <a href="https://v-vincen.life/" target="_blank">V_Vincen</a>
+          </li>
+          
+          <li>
+            <a href="http://beantech.org" target="_blank">Bean Tech</a>
+          </li>
+          
+          <li>
+            <a href="http://huangxuan.me" target="_blank">Hux Blog</a>
+          </li>
+          
+          <li>
+            <a href="https://hexo.io/" target="_blank">Hexo</a>
+          </li>
+          
+        </ul>
+        
+      </div>
     </div>
-
-
-        <hr>
-    
-        <!-- Categories -->
-
-<!-- <h5>categories</h5> -->
-<h5><a href="/categories/">CATEGORIES</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="/categories/#Hexo-Theme-LiveMyLife">
-      <li>Hexo-Theme-LiveMyLife</li>
-    </a>
-    
-    <a href="/categories/#os">
-      <li>os</li>
-    </a>
-    
-    <a href="/categories/#front-end">
-      <li>front-end</li>
-    </a>
-    
-    <a href="/categories/#shooters">
-      <li>shooters</li>
-    </a>
-    
-    <a href="/categories/#back-end">
-      <li>back-end</li>
-    </a>
-    
-    <a href="/categories/#source">
-      <li>source</li>
-    </a>
-    
-    <a href="/categories/#concurrency">
-      <li>concurrency</li>
-    </a>
-    
-    <a href="/categories/#wsl">
-      <li>wsl</li>
-    </a>
-    
-    <a href="/categories/#source, server">
-      <li>source, server</li>
-    </a>
-    
-    <a href="/categories/#java">
-      <li>java</li>
-    </a>
-    
-    <a href="/categories/#基础知识">
-      <li>基础知识</li>
-    </a>
-    
-    <a href="/categories/#前端, 基础知识">
-      <li>前端, 基础知识</li>
-    </a>
-    
-  </ul>
-</div>
-
-
-        <hr>
-    
-</div>
-
-    
   </div>
-</div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
 
 
 	<!-- Footer (contains ThemeColor、viewer) -->
