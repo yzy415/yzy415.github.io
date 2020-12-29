@@ -422,6 +422,85 @@ This LiveMyLife theme created by Vincent modified from the original Porter YenYu
   
 
 
+  <a href="/2020/12/29/ServerTimeZone/">
+    <h2 class="post-title">
+      ServerTimeZone
+    </h2>
+    <h3 class="post-subtitle">
+      JDBC中的ServerTimeZone
+    </h3>
+    <div class="post-content-preview">
+      jdbc url的serverTimeZone指的是DataBase里的时区。（服务器相当于数据库的客户端）
+connector对DataBase里的时区解读可能不太准确，所以就出现了这种手动声明数据库时区的方法。
+服务器在向数据库存时间时，connector会把服务器交给它的时间进行偏移，使得偏移后的时间与数据库里的时间对应起来。
+比如服务器是UTC-8的，serverTimeZone设置......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Yan on
+    2020-12-29
+  </p>
+  <div class="tags">
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+
+  <a href="/2020/12/23/React-diff算法/">
+    <h2 class="post-title">
+      React diff算法
+    </h2>
+    <h3 class="post-subtitle">
+      
+    </h3>
+    <div class="post-content-preview">
+      目的：切换Tab后，列表获得不同的数据源，并将其展示出来。用到了一个List组件和一个Item组件，List组件获取新的数据后生成新的Item列表。
+出现的问题是：切换Tab后，之前选中的checkbox仍会以选中的状态出现再新的列表中。
+在第一个Tab中选中第2、3个表项，如下：
+
+切换到第三个Tab后，数据成功更新，但第2、3个表项仍然处于选中状态，如下：
+
+
+代码如下：
+1234567......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Yan on
+    2020-12-23
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#React" title="React">React</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+
   <a href="/2020/12/10/TCP/">
     <h2 class="post-title">
       TCP
@@ -671,46 +750,6 @@ windows防火墙默认阻止入站网络请求
   
 
 
-  <a href="/2020/10/09/Windows下右键新建.md文件教程/">
-    <h2 class="post-title">
-      右键新建md文件
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      https://stepneverstop.github.io/win-rightclick-create-md.html
-原本创建.md文件需要首先打开markdown文本编辑器，如Typora，或者新建.txt文件然后修改后缀名，本文介绍了如何在Windows操作系统中添加右键创建.md文件的方法。
-环境windows10操作系统Typora编辑器
-效果图
-步骤1. 打开注册表
-CMD+......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Yan on
-    2020-10-09
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#windows" title="windows">windows</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-
   <a href="/2020/10/09/wsl/">
     <h2 class="post-title">
       WSL相关
@@ -737,42 +776,6 @@ wsl2访问代理：
   <div class="tags">
     
     <a href="/tags/#wsl" title="wsl">wsl</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-
-  <a href="/2020/10/09/cookie-session-token/">
-    <h2 class="post-title">
-      cookie session和token
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      cookie-session-token概述都是用于储运状态信息的一段数据，用于解决http请求的无状态（服务器无法分辨两个请求是否来自于相同的客户端）特性无法满足多个请求之间需要有联系（前一个登录请求和后一个获取用户信息的请求之间是有联系的）的需求之间的问题。
-cookie(客户端存放用户信息的数据)由服务器生成并保存在浏览器中，每次发送请求时，都需要把所有与该站相关的cookie发送给主......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Yan on
-    2020-10-09
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#front-end" title="front-end">front-end</a>
     
   </div>
   
@@ -873,6 +876,10 @@ cookie(客户端存放用户信息的数据)由服务器生成并保存在浏览
     <a href="/tags/#react" title="react" rel="1">react</a>
     
     
+    
+    <a href="/tags/#React" title="React" rel="1">React</a>
+    
+    
   </div>
 </section>
 
@@ -960,24 +967,24 @@ cookie(客户端存放用户信息的数据)由服务器生成并保存在浏览
 <div class="widget">
   <ul>
     
-    <a href="2020/12/10/TCP/">
-      <li>TCP</li>
+    <a href="2020/12/29/ServerTimeZone/">
+      <li>ServerTimeZone</li>
     </a>
     
-    <a href="2020/12/01/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8/">
-      <li>类加载器</li>
+    <a href="2020/12/23/React-diff%E7%AE%97%E6%B3%95/">
+      <li>React diff算法</li>
+    </a>
+    
+    <a href="2020/12/10/TCP/">
+      <li>TCP</li>
     </a>
     
     <a href="2020/12/01/java%E5%8C%85%E5%92%8C%E8%B7%AF%E5%BE%84/">
       <li>java包和路径</li>
     </a>
     
-    <a href="2020/11/24/react%E7%AC%94%E8%AE%B0/">
-      <li>React笔记</li>
-    </a>
-    
-    <a href="2020/11/24/%E8%87%AA%E5%88%B6tomcat%E7%AC%94%E8%AE%B0/">
-      <li>自制Tomcat笔记</li>
+    <a href="2020/12/01/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8/">
+      <li>类加载器</li>
     </a>
     
   </ul>
@@ -1009,7 +1016,7 @@ cookie(客户端存放用户信息的数据)由服务器生成并保存在浏览
     <!-- <h5>ARCHIVES</h5> -->
     <h5><a href="/archives/">ARCHIVES</a></h5>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/12/">十二月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/11/">十一月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/10/">十月 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/08/">八月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/07/">七月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/06/">六月 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/05/">五月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/04/">四月 2020</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/12/">十二月 2020</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/11/">十一月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/10/">十月 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/08/">八月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/07/">七月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/06/">六月 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/05/">五月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/04/">四月 2020</a><span class="archive-list-count">1</span></li></ul>
     </div>
 
 
@@ -1068,6 +1075,10 @@ cookie(客户端存放用户信息的数据)由服务器生成并保存在浏览
     
     <a href="/categories/#前端, 基础知识">
       <li>前端, 基础知识</li>
+    </a>
+    
+    <a href="/categories/#前端">
+      <li>前端</li>
     </a>
     
   </ul>

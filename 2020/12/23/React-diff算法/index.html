@@ -71,12 +71,12 @@
 
   <!-- Pygments Highlight CSS -->
   
-<link rel="stylesheet" href="../../css/highlight.css">
-<link rel="stylesheet" href="../../css/widget.css">
-<link rel="stylesheet" href="../../css/rocket.css">
-<link rel="stylesheet" href="../../css/signature.css">
-<link rel="stylesheet" href="../../css/catalog.css">
-<link rel="stylesheet" href="../../css/livemylife.css">
+<link rel="stylesheet" href="../../../../css/highlight.css">
+<link rel="stylesheet" href="../../../../css/widget.css">
+<link rel="stylesheet" href="../../../../css/rocket.css">
+<link rel="stylesheet" href="../../../../css/signature.css">
+<link rel="stylesheet" href="../../../../css/catalog.css">
+<link rel="stylesheet" href="../../../../css/livemylife.css">
 
 
   
@@ -138,10 +138,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="https://endp.xyz/tags/java/">
+  <link rel="canonical" href="https://endp.xyz/2020/12/23/React-diff算法/">
   <title>
     
-    Relax!
+    React diff算法 - Relax!
     
   </title>
 <meta name="generator" content="Hexo 4.2.1"></head>
@@ -289,8 +289,8 @@
 
   <style type="text/css">
     header.intro-header {
-       /*page*/
-        background-image: url('/img/header_img/archive_bg2.jpg');
+       /*post*/
+        background-image: url('');
       
     }
 
@@ -308,10 +308,40 @@
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           
-          <div class="site-heading">
-            <h1>语言的漩涡</h1>
-            <!--<hr class="small">-->
-            <span class="subheading">基于语言的思考走向语言的漩涡</span>
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#React" title="React">React</a>
+              
+            </div>
+            <h1>React diff算法</h1>
+            <h2 class="subheading"></h2>
+            <span class="meta">
+              Posted by Yan on
+              2020-12-23
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">5</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">1.4k</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- 不蒜子统计 start -->
+            <span class="meta">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            <!-- WordCount end -->
+            
+
+
           </div>
           
         </div>
@@ -352,675 +382,304 @@
 	Friends Blog、
 	anchorjs、
 	) -->
-	<!-- Main Content -->
-<div class="container">
-  <div class="row">
-    
+	<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-    <!-- USE SIDEBAR -->
-    <!-- Post Container -->
-    <div class="
-                col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                post-container
-            ">
+        <p>目的：切换Tab后，列表获得不同的数据源，并将其展示出来。用到了一个List组件和一个Item组件，List组件获取新的数据后生成新的Item列表。</p>
+<p>出现的问题是：切换Tab后，之前选中的checkbox仍会以选中的状态出现再新的列表中。</p>
+<p>在第一个Tab中选中第2、3个表项，如下：</p>
+<p><img src="C:%5CUsers%5Cflipp%5CDesktop%5Creact_key.assets%5Cimage-20201223150645144.png" alt="image-20201223150645144"></p>
+<p>切换到第三个Tab后，数据成功更新，但第2、3个表项仍然处于选中状态，如下：</p>
+<img src="C:\Users\flipp\Desktop\react_key.assets\image-20201223150914989.png" alt="image-20201223150914989" style="zoom:50%;" />
 
-      
-<!-- Main Content -->
-<div class="container">
-  <div class="row">
-    <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1">
-      <!-- 归档列表 -->
+<p>代码如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Item</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">    render() &#123;</span><br><span class="line">        <span class="keyword">const</span> status = <span class="keyword">this</span>.props.uploaded? <span class="string">"已提交"</span>:<span class="string">"未提交"</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> (</span><br><span class="line">            &lt;div&gt;</span><br><span class="line">                &lt;li&gt;</span><br><span class="line">                &lt;input type=<span class="string">"checkbox"</span> id=&#123;<span class="keyword">this</span>.props.id&#125; /&gt;</span><br><span class="line">                &lt;label <span class="keyword">for</span>=&#123;<span class="keyword">this</span>.props.id&#125;&gt;</span><br><span class="line">                    &lt;div&gt;</span><br><span class="line">                        &lt;div&gt;&#123;<span class="keyword">this</span>.props.name&#125;&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">                        &lt;div&gt;</span></span><br><span class="line"><span class="regexp">                            &lt;span className="status"&gt;&#123;status&#125;&lt;/</span>span&gt;</span><br><span class="line">                            &lt;span className=<span class="string">"timeStamp"</span>&gt;&#123;<span class="keyword">this</span>.props.timeStamp&#125;&lt;<span class="regexp">/span&gt;</span></span><br><span class="line"><span class="regexp">                        &lt;/</span>div&gt;</span><br><span class="line">                    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">                &lt;/</span>label&gt;</span><br><span class="line">                &lt;<span class="regexp">/li&gt;</span></span><br><span class="line"><span class="regexp">            &lt;/</span>div&gt;</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-      
+<p>所有的组件和html元素都没有加key。</p>
+<p>之前以为切换页面后，会重新生成新的列表元素，列表元素内的内容也会顺带被重新生成，结果表明，切换后，只有列表元素中的数据进行了更新，列表中的checkbox是不会发生变化的。</p>
+<p>为checkbox添加独一无二的key后，切换Tab后，checkbox成功得到了更新。（这里是由bug的，由于每次render生成的key都不同，那么就每次都要抛弃原有的条目，重新生成新的，所以每次都是初始状态）。</p>
+<p>是时候正儿八经地看一下React的Diff是怎么工作的啦。</p>
+<p>应该是列表项默认采用的的是序号，导致的上述问题。</p>
+<p>每次调用render方法都会生成新的React Elements树，React会拿它的最近一次的Element树进行比较，然后生成一种修改量最小的方案来更新旧树成为新树。</p>
+<p>这个比较算法是递归的。</p>
+<p>如果根节点的的类型发生了变化，那么React会选择抛弃旧树，重新建立新树，原有的组件会调用componentWillUnmount()，新建的组件会再调用componentWillMount和componentDidMount，与原来的状态全部消失。</p>
+<p>如果元素的类型相同，React会比较两个根节点的属性，然后只更新发生了变化的属性。</p>
+<p>如果组件元素的类型相同，React会保留原来的实例，更新实例的props与最新的实例保持一直，然后调用该实例的componentWillReceiveProps()和componentWillUpdate()方法。然后会调用组件的render方法，使用diff算来比较render产生的新结果和最近的结果之间的差异。</p>
+<p>在子元素之间递归，默认情况下，当递归DOM节点的子元素时，React会同时遍历两个子元素的列表，当产生差异时，会生成一个mutation。</p>
+<p>当子元素拥有key时，React使用Key来匹配原有树上的子元素以及最新树上的子元素。</p>
+<p>所以Key是干嘛用的，标识节点，减小性能消耗。</p>
+<p>如果子节点的key是由index生成的，且子节点之间顺序会发生变更，有什么样的后果？</p>
+<p>Good Practice: key首先要独一无二，其次最好是静态，如果每次都变更，性能开销比较大。数据库主键可以做Key，如果没有的话，就在componentWillMount中生成一个独一无二的ID。</p>
+<p>新树老树没有相同的Key的话，就要重建了元素了，有相同的会进行比较，然后更新，移动下位置。</p>
+<p>如果key不停地变且唯一，但元素（可控组件）的性质都由下发的属性决定就还好，性能不行，但还是可以正常使用的。但是如果key在元素间不停移动，且元素内有像input这种没状态的元素就乱套了，就算是可控组件，每次都要更新性能也会有影响。</p>
+<p>key的存在是为了无必要的更新，如果子元素的排列顺序发生了改变且没有key，就需要对几乎每个元素都要进行更新，有了key就没必要更新了，直接挪动一下就行好了。</p>
+<p>如果元素可控且本来就需要更新，用index没问题。</p>
+<p>如果元素不可控或者元素只是变更了出现顺序是没有必要更新的。</p>
+<h3 id="3-2-推荐使用index的情况"><a href="#3-2-推荐使用index的情况" class="headerlink" title="3.2 推荐使用index的情况"></a>3.2 推荐使用index的情况</h3><p>并不是任何情况使用index作为key会有缺陷，比如如下情况：</p>
+<p>你要分页渲染一个列表，每次点击翻页会重新渲染：</p>
+<p>使用唯一id：</p>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">第一页</span><br><span class="line">&lt;ul&gt;</span><br><span class="line">    &lt;<span class="built_in">li</span> <span class="built_in">key</span>=<span class="string">"000"</span>&gt;张三&lt;/<span class="built_in">li</span>&gt;</span><br><span class="line">    &lt;<span class="built_in">li</span> <span class="built_in">key</span>=<span class="string">"111"</span>&gt;李四&lt;/<span class="built_in">li</span>&gt;</span><br><span class="line">    &lt;<span class="built_in">li</span> <span class="built_in">key</span>=<span class="string">"222"</span>&gt;王五&lt;/<span class="built_in">li</span>&gt;</span><br><span class="line">&lt;/ul&gt;</span><br><span class="line">第二页</span><br><span class="line">&lt;ul&gt;</span><br><span class="line">    &lt;<span class="built_in">li</span> <span class="built_in">key</span>=<span class="string">"333"</span>&gt;张三三&lt;/<span class="built_in">li</span>&gt;</span><br><span class="line">    &lt;<span class="built_in">li</span> <span class="built_in">key</span>=<span class="string">"444"</span>&gt;李四四&lt;/<span class="built_in">li</span>&gt;</span><br><span class="line">    &lt;<span class="built_in">li</span> <span class="built_in">key</span>=<span class="string">"555"</span>&gt;王五五&lt;/<span class="built_in">li</span>&gt;</span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure>
 
-      <!-- 归档列表 -->
+<p>翻页后，三条记录的key和组件都发生了改变，因此三个子组件都会被卸载然后重新渲染。</p>
+<p>使用index：</p>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">第一页</span><br><span class="line">&lt;ul&gt;</span><br><span class="line">    &lt;<span class="built_in">li</span> <span class="built_in">key</span>=<span class="string">"0"</span>&gt;张三&lt;/<span class="built_in">li</span>&gt;</span><br><span class="line">    &lt;<span class="built_in">li</span> <span class="built_in">key</span>=<span class="string">"1"</span>&gt;李四&lt;/<span class="built_in">li</span>&gt;</span><br><span class="line">    &lt;<span class="built_in">li</span> <span class="built_in">key</span>=<span class="string">"2"</span>&gt;王五&lt;/<span class="built_in">li</span>&gt;</span><br><span class="line">&lt;/ul&gt;</span><br><span class="line">第二页</span><br><span class="line">&lt;ul&gt;</span><br><span class="line">    &lt;<span class="built_in">li</span> <span class="built_in">key</span>=<span class="string">"0"</span>&gt;张三三&lt;/<span class="built_in">li</span>&gt;</span><br><span class="line">    &lt;<span class="built_in">li</span> <span class="built_in">key</span>=<span class="string">"1"</span>&gt;李四四&lt;/<span class="built_in">li</span>&gt;</span><br><span class="line">    &lt;<span class="built_in">li</span> <span class="built_in">key</span>=<span class="string">"2"</span>&gt;王五五&lt;/<span class="built_in">li</span>&gt;</span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure>
 
-      
-      <div class="one-tag-list">
-        <span class="fa fa-calendar-times-o listing-seperator" id="2020">
-          <span class="tag-text">2020</span>
-        </span>
-        <ul>
+<p>翻页后，key不变，子组件值发生改变，组件并不会被卸载，只发生更新。</p>
+<p><a href="https://reactjs.org/docs/reconciliation.html#recursing-on-children" target="_blank" rel="noopener">https://reactjs.org/docs/reconciliation.html#recursing-on-children</a></p>
+<p><a href="https://zh-hans.reactjs.org/docs/reconciliation.html" target="_blank" rel="noopener">https://zh-hans.reactjs.org/docs/reconciliation.html</a></p>
+<p><a href="https://stackoverflow.com/questions/42522515/what-are-react-controlled-components-and-uncontrolled-components" target="_blank" rel="noopener">Controlled Component and Uncontrolled Compoenent</a></p>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
           
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            12-29
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2020/12/29/ServerTimeZone/" style="color: #0085a1">
-              <span>
-                ServerTimeZone
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+          <li class="previous">
+            <a href="/2020/12/29/ServerTimeZone/" data-toggle="tooltip" data-placement="top" title="ServerTimeZone">&larr; Previous Post</a>
           </li>
           
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            12-23
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2020/12/23/React-diff算法/" style="color: #0085a1">
-              <span>
-                React diff算法
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
           
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            12-10
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2020/12/10/TCP/" style="color: #0085a1">
-              <span>
-                TCP
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            12-01
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2020/12/01/java包和路径/" style="color: #0085a1">
-              <span>
-                java包和路径
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            12-01
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2020/12/01/类加载器/" style="color: #0085a1">
-              <span>
-                类加载器
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            11-24
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2020/11/24/react笔记/" style="color: #0085a1">
-              <span>
-                React笔记
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            11-24
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2020/11/24/自制tomcat笔记/" style="color: #0085a1">
-              <span>
-                自制Tomcat笔记
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            10-11
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2020/10/11/wsl2访问宿主机代理/" style="color: #0085a1">
-              <span>
-                wsl2和wsl2下的Git访问宿主机代理
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            10-09
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2020/10/09/cookie-session-token/" style="color: #0085a1">
-              <span>
-                cookie session和token
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            10-09
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2020/10/09/wsl/" style="color: #0085a1">
-              <span>
-                WSL相关
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            10-09
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2020/10/09/Windows下右键新建.md文件教程/" style="color: #0085a1">
-              <span>
-                右键新建md文件
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            08-30
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2020/08/30/web/" style="color: #0085a1">
-              <span>
-                前端基础html和css
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            08-30
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2020/08/30/spring/" style="color: #0085a1">
-              <span>
-                Spring
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            08-23
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2020/08/23/maven/" style="color: #0085a1">
-              <span>
-                Maven
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            07-05
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2020/07/05/源码_SS_1/" style="color: #0085a1">
-              <span>
-                SS源码（上）
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            07-05
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2020/07/05/源码_SS_2/" style="color: #0085a1">
-              <span>
-                SS源码（下）
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            06-25
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2020/06/25/Java_并发/" style="color: #0085a1">
-              <span>
-                Java并发（1）
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            06-25
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2020/06/25/2020-06-25-FileSystem_Hierachyg_Standard/" style="color: #0085a1">
-              <span>
-                文件系统常用目录
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            06-21
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2020/06/21/2020-06-21-操作系统device_and_module/" style="color: #0085a1">
-              <span>
-                设备和模组
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            06-14
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2020/06/14/2020-06-14-操作系统page_cache_and_writeback - 副本/" style="color: #0085a1">
-              <span>
-                页缓存和写回
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            05-15
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2020/05/15/2020-05-15-操作系统怎么读取一个文件/" style="color: #0085a1">
-              <span>
-                文件读取
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            04-17
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2020/04/17/Hexo-Theme-LiveMyLife/" style="color: #0085a1">
-              <span>
-                Hexo-Theme-LiveMyLife
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+          <li class="next">
+            <a href="/2020/12/10/TCP/" data-toggle="tooltip" data-placement="top" title="TCP">Next Post &rarr;</a>
           </li>
           
         </ul>
+
+        
+        <!-- tip start -->
+        <div class="tip">
+          <p>
+            If you like this blog or find it useful for you, you are welcome to comment on it. You are also welcome to share this blog, so that more people can participate in it. If the images used in the blog infringe your copyright, please contact the author to delete them. Thank you !
+          </p>
+        </div>
+        <!-- tip end -->
+        
+
+        
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=React diff算法&body=Hi,I found this website and thought you might like it https://endp.xyz/2020/12/23/React-diff算法/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+        <!-- Sharing End -->
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+<!-- gitalk start -->
+<!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
+
+<div id="gitalk-container"></div>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.js"></script> -->
+<script src="/js/comment/gitalk.js"></script>
+
+<script>
+  var gitalk = new Gitalk({
+    clientID: '',
+    clientSecret: '',
+    repo: '',
+    owner: '',
+    admin: '',
+    id: 'Wed Dec 23 2020 15:21:39 GMT+0800', // Ensure uniqueness and length less than 50
+    distractionFreeMode: false, // Facebook-like distraction free mode
+    perPage: 10 ,
+    pagerDirection: 'last',
+    createIssueManually: false ,
+    language: 'en'
+  });
+  gitalk.render('gitalk-container');
+
+  var gtFolded = () => {
+    setTimeout(function() {
+      let markdownBody = document.getElementsByClassName("markdown-body");
+      let list = Array.from(markdownBody);
+      list.forEach(item => {
+        if (item.clientHeight > 250) {
+          item.classList.add('gt-comment-body-folded');
+          item.style.maxHeight = '250px';
+          item.title = 'Click to Expand';
+          item.onclick = function() {
+            item.classList.remove('gt-comment-body-folded');
+            item.style.maxHeight = '';
+            item.title = '';
+            item.onclick = null;
+          };
+        }
+      })
+    }, 800);
+  }
+</script>
+
+<!-- gitalk end -->
+
+
+
+<!-- 2. gitment comment -->
+
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
       </div>
-      
 
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
 
-    </div>
-  </div>
-</div>
-
-
-      <!-- 如果开启评论功能 -->
-      
-    </div>
-
-    <!-- Sidebar Container -->
-<div class="
-    col-lg-3 col-lg-offset-0
-    col-md-3 col-md-offset-0
-    col-sm-12
-    col-xs-12
-    sidebar-container
-">
     
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
         
-<!-- <h5>VISITORS</h5> -->
-<h5><a href="/">VISITORS</a></h5>
-<div class="widget">
-  <span>
-    Viewed <b><i><span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Times
-  </span>
-  <br />
-  <span>
-    <b><i><span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Visitors In Total
-  </span>
-</div>
-
-
-        <hr>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#3-2-推荐使用index的情况"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">3.2 推荐使用index的情况</span></a></li></ol>
+        
+        </div>
+      </aside>
     
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
         <!-- Featured Tags -->
-
-<section>
-  <!-- no hr -->
-  <h5><a href="/tags/">FEATURED TAGS</a></h5>
-  <div class="tags">
-    
-    
-    <a href="/tags/#Hexo" title="Hexo" rel="1">Hexo</a>
-    
-    
-    
-    <a href="/tags/#Hexo-Theme-LiveMyLife" title="Hexo-Theme-LiveMyLife" rel="1">Hexo-Theme-LiveMyLife</a>
-    
-    
-    
-    <a href="/tags/#windows" title="windows" rel="1">windows</a>
-    
-    
-    
-    <a href="/tags/#java" title="java" rel="3">java</a>
-    
-    
-    
-    <a href="/tags/#wsl" title="wsl" rel="2">wsl</a>
-    
-    
-    
-    <a href="/tags/#network" title="network" rel="2">network</a>
-    
-    
-    
-    <a href="/tags/#front-end" title="front-end" rel="2">front-end</a>
-    
-    
-    
-    <a href="/tags/#server, tomcat" title="server, tomcat" rel="1">server, tomcat</a>
-    
-    
-    
-    <a href="/tags/#java基础知识" title="java基础知识" rel="2">java基础知识</a>
-    
-    
-    
-    <a href="/tags/#计算机网络" title="计算机网络" rel="1">计算机网络</a>
-    
-    
-    
-    <a href="/tags/#react" title="react" rel="1">react</a>
-    
-    
-    
-    <a href="/tags/#React" title="React" rel="1">React</a>
-    
-    
-  </div>
-</section>
-
-
-        <hr>
-    
-        <!-- Short About -->
-<section class="visible-md visible-lg">
-  <h5><a href="/about/">ABOUT ME</a></h5>
-  <div class="short-about">
-
-    
-    <img id="avatar_pic" src="/img/avatar/growstrong.jpg" alt="avatar_pic" style="box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
-    -moz-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
-    -webkit-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);" />
-    
-
-    
-    <p>Grow Strong!</p>
-    
-
-    <!-- SNS Link -->
-    <ul class="list-inline">
-      
-
-      
-      <li>
-        <a target="_blank" href="https://github.com/yzy415">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
-      
-
-      
-      <li>
-        <a target="_blank" href="https://twitter.com/yzy415">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
-      
-
-      
-      <li>
-        <a target="_blank" href="https://www.instagram.com/yzy415">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
-      
-
-      
-
-      
-
-      
-
-      
-      <li>
-        <a target="_blank" href="http://weibo.com/yzy415">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
-      
-
-    </ul>
-  </div>
-</section>
-
-        <hr>
-    
         
-<!-- <h5>RECENT POSTS</h5> -->
-<h5><a href="/">RECENT POSTS</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="../../2020/12/29/ServerTimeZone/">
-      <li>ServerTimeZone</li>
-    </a>
-    
-    <a href="../../2020/12/23/React-diff%E7%AE%97%E6%B3%95/">
-      <li>React diff算法</li>
-    </a>
-    
-    <a href="../../2020/12/10/TCP/">
-      <li>TCP</li>
-    </a>
-    
-    <a href="../../2020/12/01/java%E5%8C%85%E5%92%8C%E8%B7%AF%E5%BE%84/">
-      <li>java包和路径</li>
-    </a>
-    
-    <a href="../../2020/12/01/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8/">
-      <li>类加载器</li>
-    </a>
-    
-  </ul>
-</div>
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">FEATURED TAGS</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#React" title="React">React</a>
+            
+          </div>
+        </section>
+        
 
-
-        <hr>
-    
         <!-- Friends Blog -->
-
-<!-- <h5>FRIENDS</h5> -->
-<h5><a href="/">FRIENDS</a></h5>
-<ul class="list-inline">
-  
-  <li><a href="https://v-vincen.life/" target="_blank">V_Vincen</a></li>
-  
-  <li><a href="http://beantech.org" target="_blank">Bean Tech</a></li>
-  
-  <li><a href="http://huangxuan.me" target="_blank">Hux Blog</a></li>
-  
-  <li><a href="https://hexo.io/" target="_blank">Hexo</a></li>
-  
-</ul>
-
-
-        <hr>
-    
         
-    <!-- <h5>ARCHIVES</h5> -->
-    <h5><a href="/archives/">ARCHIVES</a></h5>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2020/12/">十二月 2020</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2020/11/">十一月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2020/10/">十月 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2020/08/">八月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2020/07/">七月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2020/06/">六月 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2020/05/">五月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2020/04/">四月 2020</a><span class="archive-list-count">1</span></li></ul>
+        <hr>
+        <h5>FRIENDS</h5>
+        <ul class="list-inline">
+
+          
+          <li>
+            <a href="https://v-vincen.life/" target="_blank">V_Vincen</a>
+          </li>
+          
+          <li>
+            <a href="http://beantech.org" target="_blank">Bean Tech</a>
+          </li>
+          
+          <li>
+            <a href="http://huangxuan.me" target="_blank">Hux Blog</a>
+          </li>
+          
+          <li>
+            <a href="https://hexo.io/" target="_blank">Hexo</a>
+          </li>
+          
+        </ul>
+        
+      </div>
     </div>
-
-
-        <hr>
-    
-        <!-- Categories -->
-
-<!-- <h5>categories</h5> -->
-<h5><a href="/categories/">CATEGORIES</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="/categories/#Hexo-Theme-LiveMyLife">
-      <li>Hexo-Theme-LiveMyLife</li>
-    </a>
-    
-    <a href="/categories/#os">
-      <li>os</li>
-    </a>
-    
-    <a href="/categories/#front-end">
-      <li>front-end</li>
-    </a>
-    
-    <a href="/categories/#shooters">
-      <li>shooters</li>
-    </a>
-    
-    <a href="/categories/#back-end">
-      <li>back-end</li>
-    </a>
-    
-    <a href="/categories/#source">
-      <li>source</li>
-    </a>
-    
-    <a href="/categories/#concurrency">
-      <li>concurrency</li>
-    </a>
-    
-    <a href="/categories/#wsl">
-      <li>wsl</li>
-    </a>
-    
-    <a href="/categories/#source, server">
-      <li>source, server</li>
-    </a>
-    
-    <a href="/categories/#java">
-      <li>java</li>
-    </a>
-    
-    <a href="/categories/#基础知识">
-      <li>基础知识</li>
-    </a>
-    
-    <a href="/categories/#前端, 基础知识">
-      <li>前端, 基础知识</li>
-    </a>
-    
-    <a href="/categories/#前端">
-      <li>前端</li>
-    </a>
-    
-  </ul>
-</div>
-
-
-        <hr>
-    
-</div>
-
-    
   </div>
-</div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
 
 
 	<!-- Footer (contains ThemeColor、viewer) -->

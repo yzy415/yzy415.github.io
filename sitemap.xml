@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://endp.xyz/2020/12/29/ServerTimeZone/</loc>
+    
+    <lastmod>2020-12-29</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://endp.xyz/2020/12/23/React-diff%E7%AE%97%E6%B3%95/</loc>
+    
+    <lastmod>2020-12-28</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://endp.xyz/2020/12/10/TCP/</loc>
     
     <lastmod>2020-12-10</lastmod>
@@ -179,7 +193,7 @@
 
   <url>
     <loc>https://endp.xyz/</loc>
-    <lastmod>2020-12-10</lastmod>
+    <lastmod>2020-12-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -187,77 +201,84 @@
   
   <url>
     <loc>https://endp.xyz/tags/Hexo/</loc>
-    <lastmod>2020-12-10</lastmod>
+    <lastmod>2020-12-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://endp.xyz/tags/Hexo-Theme-LiveMyLife/</loc>
-    <lastmod>2020-12-10</lastmod>
+    <lastmod>2020-12-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://endp.xyz/tags/windows/</loc>
-    <lastmod>2020-12-10</lastmod>
+    <lastmod>2020-12-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://endp.xyz/tags/java/</loc>
-    <lastmod>2020-12-10</lastmod>
+    <lastmod>2020-12-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://endp.xyz/tags/wsl/</loc>
-    <lastmod>2020-12-10</lastmod>
+    <lastmod>2020-12-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://endp.xyz/tags/network/</loc>
-    <lastmod>2020-12-10</lastmod>
+    <lastmod>2020-12-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://endp.xyz/tags/front-end/</loc>
-    <lastmod>2020-12-10</lastmod>
+    <lastmod>2020-12-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://endp.xyz/tags/server-tomcat/</loc>
-    <lastmod>2020-12-10</lastmod>
+    <lastmod>2020-12-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://endp.xyz/tags/java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</loc>
-    <lastmod>2020-12-10</lastmod>
+    <lastmod>2020-12-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://endp.xyz/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</loc>
-    <lastmod>2020-12-10</lastmod>
+    <lastmod>2020-12-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://endp.xyz/tags/react/</loc>
-    <lastmod>2020-12-10</lastmod>
+    <lastmod>2020-12-29</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://endp.xyz/tags/React/</loc>
+    <lastmod>2020-12-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -266,84 +287,91 @@
   
   <url>
     <loc>https://endp.xyz/categories/Hexo-Theme-LiveMyLife/</loc>
-    <lastmod>2020-12-10</lastmod>
+    <lastmod>2020-12-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://endp.xyz/categories/os/</loc>
-    <lastmod>2020-12-10</lastmod>
+    <lastmod>2020-12-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://endp.xyz/categories/front-end/</loc>
-    <lastmod>2020-12-10</lastmod>
+    <lastmod>2020-12-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://endp.xyz/categories/shooters/</loc>
-    <lastmod>2020-12-10</lastmod>
+    <lastmod>2020-12-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://endp.xyz/categories/back-end/</loc>
-    <lastmod>2020-12-10</lastmod>
+    <lastmod>2020-12-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://endp.xyz/categories/source/</loc>
-    <lastmod>2020-12-10</lastmod>
+    <lastmod>2020-12-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://endp.xyz/categories/concurrency/</loc>
-    <lastmod>2020-12-10</lastmod>
+    <lastmod>2020-12-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://endp.xyz/categories/wsl/</loc>
-    <lastmod>2020-12-10</lastmod>
+    <lastmod>2020-12-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://endp.xyz/categories/source-server/</loc>
-    <lastmod>2020-12-10</lastmod>
+    <lastmod>2020-12-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://endp.xyz/categories/java/</loc>
-    <lastmod>2020-12-10</lastmod>
+    <lastmod>2020-12-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://endp.xyz/categories/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</loc>
-    <lastmod>2020-12-10</lastmod>
+    <lastmod>2020-12-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://endp.xyz/categories/%E5%89%8D%E7%AB%AF-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</loc>
-    <lastmod>2020-12-10</lastmod>
+    <lastmod>2020-12-29</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://endp.xyz/categories/%E5%89%8D%E7%AB%AF/</loc>
+    <lastmod>2020-12-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>

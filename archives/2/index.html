@@ -379,6 +379,82 @@
   
 
 
+  <a href="/2020/10/09/cookie-session-token/">
+    <h2 class="post-title">
+      cookie session和token
+    </h2>
+    <h3 class="post-subtitle">
+      
+    </h3>
+    <div class="post-content-preview">
+      cookie-session-token概述都是用于储运状态信息的一段数据，用于解决http请求的无状态（服务器无法分辨两个请求是否来自于相同的客户端）特性无法满足多个请求之间需要有联系（前一个登录请求和后一个获取用户信息的请求之间是有联系的）的需求之间的问题。
+cookie(客户端存放用户信息的数据)由服务器生成并保存在浏览器中，每次发送请求时，都需要把所有与该站相关的cookie发送给主......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Yan on
+    2020-10-09
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#front-end" title="front-end">front-end</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+
+  <a href="/2020/10/09/Windows下右键新建.md文件教程/">
+    <h2 class="post-title">
+      右键新建md文件
+    </h2>
+    <h3 class="post-subtitle">
+      
+    </h3>
+    <div class="post-content-preview">
+      https://stepneverstop.github.io/win-rightclick-create-md.html
+原本创建.md文件需要首先打开markdown文本编辑器，如Typora，或者新建.txt文件然后修改后缀名，本文介绍了如何在Windows操作系统中添加右键创建.md文件的方法。
+环境windows10操作系统Typora编辑器
+效果图
+步骤1. 打开注册表
+CMD+......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Yan on
+    2020-10-09
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#windows" title="windows">windows</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+
   <a href="/2020/08/30/spring/">
     <h2 class="post-title">
       Spring
@@ -704,78 +780,6 @@ Network，通过Socket接口和相关协议进行访问
 </div>
 <hr>
 
-<div class="post-preview">
-
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-
-  <a href="/2020/06/14/2020-06-14-操作系统page_cache_and_writeback - 副本/">
-    <h2 class="post-title">
-      页缓存和写回
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      Page CachePage Cache存在的目的是减少磁盘I/O，把磁盘中用到的数据暂时以page为单位存放在主存中，页内内容对应于磁盘中的blocks（块设备读取的单元）；每次读取磁盘前(如read()系统调用)，先检测主存中有无对应数据，如果有则从主存中读取。
-
-服务流程：
-Read: 读时，先检查主存，主存没有再访问磁盘，并把从磁盘读到的数据放到主存页中。可以只缓存一个文件的部分页到......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Yan on
-    2020-06-14
-  </p>
-  <div class="tags">
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-
-  <a href="/2020/05/15/2020-05-15-操作系统怎么读取一个文件/">
-    <h2 class="post-title">
-      文件读取
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      ext4 file system
-ext4文件系统中的dentry只实现由byte string到inode number的映射。
-怎么实现由inode建立dentry呢？
-...
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Yan on
-    2020-05-15
-  </p>
-  <div class="tags">
-    
-  </div>
-  
-
-</div>
-<hr>
-
 
 
   <!-- Pager -->
@@ -785,6 +789,10 @@ ext4文件系统中的dentry只实现由byte string到inode number的映射。
       <a href="/">&larr; Newer Posts</a>
     </li>
     
+    
+    <li class="next">
+      <a href="/archives/3/">Older Posts &rarr;</a>
+    </li>
     
   </ul>
 
@@ -867,6 +875,10 @@ ext4文件系统中的dentry只实现由byte string到inode number的映射。
     
     
     <a href="/tags/#react" title="react" rel="1">react</a>
+    
+    
+    
+    <a href="/tags/#React" title="React" rel="1">React</a>
     
     
   </div>
@@ -956,24 +968,24 @@ ext4文件系统中的dentry只实现由byte string到inode number的映射。
 <div class="widget">
   <ul>
     
-    <a href="../../2020/12/10/TCP/">
-      <li>TCP</li>
+    <a href="../../2020/12/29/ServerTimeZone/">
+      <li>ServerTimeZone</li>
     </a>
     
-    <a href="../../2020/12/01/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8/">
-      <li>类加载器</li>
+    <a href="../../2020/12/23/React-diff%E7%AE%97%E6%B3%95/">
+      <li>React diff算法</li>
+    </a>
+    
+    <a href="../../2020/12/10/TCP/">
+      <li>TCP</li>
     </a>
     
     <a href="../../2020/12/01/java%E5%8C%85%E5%92%8C%E8%B7%AF%E5%BE%84/">
       <li>java包和路径</li>
     </a>
     
-    <a href="../../2020/11/24/react%E7%AC%94%E8%AE%B0/">
-      <li>React笔记</li>
-    </a>
-    
-    <a href="../../2020/11/24/%E8%87%AA%E5%88%B6tomcat%E7%AC%94%E8%AE%B0/">
-      <li>自制Tomcat笔记</li>
+    <a href="../../2020/12/01/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8/">
+      <li>类加载器</li>
     </a>
     
   </ul>
@@ -1005,7 +1017,7 @@ ext4文件系统中的dentry只实现由byte string到inode number的映射。
     <!-- <h5>ARCHIVES</h5> -->
     <h5><a href="/archives/">ARCHIVES</a></h5>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../2020/12/">十二月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/11/">十一月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/10/">十月 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/08/">八月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/07/">七月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/06/">六月 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/05/">五月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/04/">四月 2020</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../2020/12/">十二月 2020</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/11/">十一月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/10/">十月 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/08/">八月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/07/">七月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/06/">六月 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/05/">五月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/04/">四月 2020</a><span class="archive-list-count">1</span></li></ul>
     </div>
 
 
@@ -1064,6 +1076,10 @@ ext4文件系统中的dentry只实现由byte string到inode number的映射。
     
     <a href="/categories/#前端, 基础知识">
       <li>前端, 基础知识</li>
+    </a>
+    
+    <a href="/categories/#前端">
+      <li>前端</li>
     </a>
     
   </ul>
