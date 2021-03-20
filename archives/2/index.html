@@ -379,42 +379,6 @@
   
 
 
-  <a href="/2020/10/09/cookie-session-token/">
-    <h2 class="post-title">
-      cookie session和token
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      cookie-session-token概述都是用于储运状态信息的一段数据，用于解决http请求的无状态（服务器无法分辨两个请求是否来自于相同的客户端）特性无法满足多个请求之间需要有联系（前一个登录请求和后一个获取用户信息的请求之间是有联系的）的需求之间的问题。
-cookie(客户端存放用户信息的数据)由服务器生成并保存在浏览器中，每次发送请求时，都需要把所有与该站相关的cookie发送给主......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Yan on
-    2020-10-09
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#front-end" title="front-end">front-end</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-
   <a href="/2020/10/09/Windows下右键新建.md文件教程/">
     <h2 class="post-title">
       右键新建md文件
@@ -575,15 +539,16 @@ build phases: build lifecycles的不同阶段，使用mvn XXX时无需主动声�
   
 
 
-  <a href="/2020/07/05/源码_SS_1/">
+  <a href="/2020/07/05/源码_SS_2/">
     <h2 class="post-title">
-      SS源码（上）
+      SS源码（下）
     </h2>
     <h3 class="post-subtitle">
       
     </h3>
     <div class="post-content-preview">
-      SS涉及的个体
+      [toc]
+Part1SS涉及的个体
 用户程序
 sslocal，位于本地，用于转发用户程序发来的消息给ssserver
 ssserver，位于代理服务器，转发sslocal的消息给remote
@@ -594,7 +559,7 @@ SS的工作流程
 用户程序与sslocal建立TCP连接
 用户程序与sslocal通过socks5协议进行协商
 协议版本和通信方法（如：是否使用加密）的协商
-用户程序向ssloca......
+......
     </div>
   </a>
   
@@ -621,16 +586,15 @@ SS的工作流程
   
 
 
-  <a href="/2020/07/05/源码_SS_2/">
+  <a href="/2020/07/05/源码_SS_1/">
     <h2 class="post-title">
-      SS源码（下）
+      SS源码（上）
     </h2>
     <h3 class="post-subtitle">
       
     </h3>
     <div class="post-content-preview">
-      [toc]
-Part1SS涉及的个体
+      SS涉及的个体
 用户程序
 sslocal，位于本地，用于转发用户程序发来的消息给ssserver
 ssserver，位于代理服务器，转发sslocal的消息给remote
@@ -641,7 +605,7 @@ SS的工作流程
 用户程序与sslocal建立TCP连接
 用户程序与sslocal通过socks5协议进行协商
 协议版本和通信方法（如：是否使用加密）的协商
-......
+用户程序向ssloca......
     </div>
   </a>
   
@@ -780,6 +744,42 @@ Network，通过Socket接口和相关协议进行访问
 </div>
 <hr>
 
+<div class="post-preview">
+
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+
+  <a href="/2020/06/14/2020-06-14-操作系统page_cache_and_writeback - 副本/">
+    <h2 class="post-title">
+      页缓存和写回
+    </h2>
+    <h3 class="post-subtitle">
+      
+    </h3>
+    <div class="post-content-preview">
+      Page CachePage Cache存在的目的是减少磁盘I/O，把磁盘中用到的数据暂时以page为单位存放在主存中，页内内容对应于磁盘中的blocks（块设备读取的单元）；每次读取磁盘前(如read()系统调用)，先检测主存中有无对应数据，如果有则从主存中读取。
+
+服务流程：
+Read: 读时，先检查主存，主存没有再访问磁盘，并把从磁盘读到的数据放到主存页中。可以只缓存一个文件的部分页到......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Yan on
+    2020-06-14
+  </p>
+  <div class="tags">
+    
+  </div>
+  
+
+</div>
+<hr>
+
 
 
   <!-- Pager -->
@@ -832,14 +832,6 @@ Network，通过Socket接口和相关协议进行访问
   <!-- no hr -->
   <h5><a href="/tags/">FEATURED TAGS</a></h5>
   <div class="tags">
-    
-    
-    <a href="/tags/#Hexo" title="Hexo" rel="1">Hexo</a>
-    
-    
-    
-    <a href="/tags/#Hexo-Theme-LiveMyLife" title="Hexo-Theme-LiveMyLife" rel="1">Hexo-Theme-LiveMyLife</a>
-    
     
     
     <a href="/tags/#windows" title="windows" rel="1">windows</a>
@@ -1017,7 +1009,7 @@ Network，通过Socket接口和相关协议进行访问
     <!-- <h5>ARCHIVES</h5> -->
     <h5><a href="/archives/">ARCHIVES</a></h5>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../2020/12/">十二月 2020</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/11/">十一月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/10/">十月 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/08/">八月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/07/">七月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/06/">六月 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/05/">五月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/04/">四月 2020</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../2020/12/">十二月 2020</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/11/">十一月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/10/">十月 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/08/">八月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/07/">七月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/06/">六月 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/05/">五月 2020</a><span class="archive-list-count">1</span></li></ul>
     </div>
 
 
@@ -1029,10 +1021,6 @@ Network，通过Socket接口和相关协议进行访问
 <h5><a href="/categories/">CATEGORIES</a></h5>
 <div class="widget">
   <ul>
-    
-    <a href="/categories/#Hexo-Theme-LiveMyLife">
-      <li>Hexo-Theme-LiveMyLife</li>
-    </a>
     
     <a href="/categories/#os">
       <li>os</li>
@@ -1158,7 +1146,7 @@ Network，通过Socket接口和相关协议进行访问
         <p class="copyright text-muted">
           Copyright &copy;
           Yan
-          2020
+          2021
           <br>
           Theme by
           <a href="http://beantech.org" target="_blank" rel="noopener">BeanTech</a>
